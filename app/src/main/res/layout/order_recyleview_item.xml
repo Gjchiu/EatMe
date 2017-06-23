@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvorderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#DDFFDD"
+            android:text="Title"
+            android:textColor="#330033"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvorderDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#EEEEFF"
+        android:padding="12dp"
+        android:text="detail"
+        android:textColor="#000044"
+        android:textSize="24sp" />
+
+</LinearLayout>
