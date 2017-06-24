@@ -82,55 +82,58 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp">
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="65dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
                 android:background="#E6CDA0"
+                android:gravity="center_vertical"
                 android:onClick="covertArea"
                 app:srcCompat="@drawable/fork" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="#E6CDA0"
+                android:layout_marginRight="10dp"
                 app:srcCompat="@drawable/member" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="#E6CDA0"
+                android:layout_marginRight="10dp"
                 app:srcCompat="@drawable/take" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
                 android:background="#E6CDA0"
-                app:srcCompat="@drawable/order"
-                android:onClick="convertToOrder"/>
+                android:onClick="convertToOrder"
+                app:srcCompat="@drawable/order" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="#E6CDA0"
+                android:layout_marginRight="10dp"
                 app:srcCompat="@drawable/message" />
 
         </TableRow>
@@ -140,7 +143,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.04"
+    android:layout_weight="1"
         android:background="#E18769"></LinearLayout>
 
 </LinearLayout>

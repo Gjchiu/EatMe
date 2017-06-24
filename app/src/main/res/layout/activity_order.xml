@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.app.FragmentTabHost
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@android:id/tabhost"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFF4D7">
-
+    android:layout_height="match_parent">
     <android.support.v7.widget.Toolbar
         android:id="@+id/order_toolbar"
         android:layout_width="match_parent"
@@ -27,39 +26,38 @@
         </FrameLayout>
 
     </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableRow
-            android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/btnallorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="全部訂單"
-                android:onClick="ShowAllOrder"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
-            <Button
-                android:id="@+id/btnalreadygetorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="未取餐" />
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
-            <Button
-                android:id="@+id/btnnotyetorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="已取餐" />
-        </TableRow>
-    </TableLayout>
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
 
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
 
-    <FrameLayout
-        android:id="@+id/orderbody"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        </LinearLayout>
 
-    </FrameLayout>
-
-</LinearLayout>
+    </android.support.v4.app.FragmentTabHost>

@@ -68,10 +68,10 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
 
     private void expand(int position) {
         // 被點擊的資料列才會彈出內容，其他資料列的內容會自動縮起來
-        // for (int i=0; i<newsExpanded.length; i++) {
-        // newsExpanded[i] = false;
+        // for (int i=0; i<orderExpanded.length; i++) {
+        // orderExpanded[i] = false;
         // }
-        // newsExpanded[position] = true;
+        // orderExpanded[position] = true;
 
         orderExpanded[position] = !orderExpanded[position];
         notifyDataSetChanged();

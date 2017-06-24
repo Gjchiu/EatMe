@@ -30,9 +30,6 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
-        <activity
             android:name=".Area.AreaActivity"
             android:parentActivityName="com.example.george.eatme.MainActivity"/>
         <activity
