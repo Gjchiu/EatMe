@@ -22,35 +22,24 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-/**
- * Created by Java on 2017/6/22.
- */
-
 public class OrderActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        initToolbar();
+        setToolbar();
         setFragmentTabHost();
-        askPermissions();
-
-        Fragment fragment = new OrderFragment();
+//        Fragment fragment = new OrderFragment();
 //        switchFragment(fragment);
 
     }
-//    private void switchFragment(Fragment fragment) {
-//        FragmentTransaction fragmentTransaction =
-//                getSupportFragmentManager().beginTransaction();
-//        fragmentTransaction.replace(R.id.orderbody, fragment);
-//        fragmentTransaction.commit();
-//    }
-
-    public void ShowAllOrder(View view) {
-        Fragment fragment = new OrderFragment();
-//        switchFragment(fragment);
-
+    private void switchFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.commit();
     }
+
     public  void setFragmentTabHost(){
         //獲取TabHost控制元件
         FragmentTabHost mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
@@ -79,58 +68,12 @@ public class OrderActivity extends AppCompatActivity {
         mTabHost.addTab(mTabHost.newTabSpec("three")
                         .setIndicator("已取餐")
                 ,OrderFragment.class, null);
-//
-//        //同上方Tab設定，不同處為帶入參數的差異
-//        mTabHost.addTab(mTabHost.newTabSpec("four")
-//                        .setIndicator("第四堂課",getResources().getDrawable(R.drawable.lesson4_item))
-//                ,LessonFourFragment.class,null);
     }
-    public void initToolbar(){
+    public void setToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private static final int REQ_PERMISSIONS = 0;
 
-    private void askPermissions() {
-        String[] permissions = {
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.ACCESS_FINE_LOCATION
-        };
-
-        Set<String> permissionsRequest = new HashSet<>();
-        for (String permission : permissions) {
-            int result = ContextCompat.checkSelfPermission(this, permission);
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                permissionsRequest.add(permission);
-            }
-        }
-
-        if (!permissionsRequest.isEmpty()) {
-            ActivityCompat.requestPermissions(this,
-                    permissionsRequest.toArray(new String[permissionsRequest.size()]),
-                    REQ_PERMISSIONS);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case REQ_PERMISSIONS:
-                String text = "";
-                for (int i = 0; i < grantResults.length; i++) {
-                    if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-                        text += permissions[i] + "\n";
-                    }
-                }
-                if (!text.isEmpty()) {
-                    text += getString(R.string.text_NotGranted);
-                    Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-                }
-                break;
-        }
-    }
 }

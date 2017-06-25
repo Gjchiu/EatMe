@@ -19,6 +19,16 @@ public class Store_Order {
     private String order_note;
     private Timestamp order_taketime;
 
+    public String getStore_name() {
+        return store_name;
+    }
+
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
+    }
+
+    private String store_name;
+
     public String getOrder_id() {
         return order_id;
     }
