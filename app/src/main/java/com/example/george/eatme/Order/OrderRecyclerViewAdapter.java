@@ -28,13 +28,12 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
     private List<Store_Order> orderList;
     private boolean[] orderExpanded;
     private OnItemClickListener mOnItemClickListener = null;
-    private  String[]  datas;
 
     @Override
     public void onClick(View view) {
         if (mOnItemClickListener != null) {
             //注意这里使用getTag方法获取position
-            mOnItemClickListener.onItemClick(v,(int)v.getTag());
+            mOnItemClickListener.onItemClick(view,(int)view.getTag());
         }
     }
 
@@ -45,7 +44,6 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
     public OrderRecyclerViewAdapter(Context context, List<Store_Order> orderList) {
         layoutInflater = LayoutInflater.from(context);
         this.orderList = orderList;
-//        orderExpanded = new boolean[orderList.size()];
     }
 
     @Override
@@ -76,7 +74,6 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
                                     "\n日期：" + sdf.format(order.getOrder_time())  +
                                     "\n訂餐店家："+ order.getStore_name() +
                                     "\n總金額："+ order.getTotalprice());
-        holder.mTextView.setText(datas[position]);
         //将position保存在itemView的Tag中，以便点击时进行获取
         holder.itemView.setTag(position);
 //        holder.tvOrderDetail.setText(order.getTotalprice().toString());
@@ -93,6 +90,10 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
     @Override
     public int getItemCount() {
         return orderList.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
     }
 
 //    private void expand(int position) {

@@ -23,14 +23,15 @@ import java.util.Set;
 
 
 public class OrderActivity extends AppCompatActivity {
+    Bundle bundle;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        bundle = new Bundle();
+        bundle.putString("action","getAll");
         setContentView(R.layout.activity_order);
         setToolbar();
         setFragmentTabHost();
-//        Fragment fragment = new OrderFragment();
-//        switchFragment(fragment);
 
     }
     private void switchFragment(Fragment fragment) {
@@ -41,6 +42,7 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     public  void setFragmentTabHost(){
+
         //獲取TabHost控制元件
         FragmentTabHost mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         //設定Tab頁面的顯示區域，帶入Context、FragmentManager、Container ID
@@ -57,20 +59,21 @@ public class OrderActivity extends AppCompatActivity {
         //LessonOneFragment class，無夾帶Bundle資訊。
         mTabHost.addTab(mTabHost.newTabSpec("one")
                         .setIndicator("全部訂單")
-                ,OrderFragment.class,null);
+                ,OrderFragment.class, bundle);
 
         //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("two")
                         .setIndicator("未取餐")
-                ,OrderFragment.class,null);
+                ,OrderFragment.class,bundle);
 
         //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("three")
                         .setIndicator("已取餐")
-                ,OrderFragment.class, null);
+                ,OrderFragment.class, bundle);
     }
     public void setToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
+        toolbar.setTitle("訂單查詢");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
