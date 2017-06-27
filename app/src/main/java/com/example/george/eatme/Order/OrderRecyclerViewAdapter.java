@@ -71,7 +71,7 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
         String title = order.getOrder_id();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         holder.tvOrderTitle.setText("訂單編號：" + title +
-                                    "\n日期：" + sdf.format(order.getOrder_time())  +
+                                    "\n日期：" + sdf.format(order.getOrder_time()) +
                                     "\n訂餐店家："+ order.getStore_name() +
                                     "\n總金額："+ order.getTotalprice());
         //将position保存在itemView的Tag中，以便点击时进行获取

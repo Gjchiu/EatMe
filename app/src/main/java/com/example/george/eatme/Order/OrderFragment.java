@@ -29,14 +29,14 @@ import static android.R.attr.data;
 public class OrderFragment extends android.support.v4.app.Fragment{
     private final static String TAG = "OrderFragment";
     private RecyclerView rvOrder;
-    private boolean[] orderExpanded;
-    Bundle bundle =  getArguments();;
+    Bundle bundle;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.order_fragment, container, false);
         rvOrder = (RecyclerView) view.findViewById(R.id.rvOrders);
         rvOrder.setLayoutManager(new LinearLayoutManager(getActivity()));
+        bundle =  getArguments();
         return view;
     }
 
@@ -51,11 +51,13 @@ public class OrderFragment extends android.support.v4.app.Fragment{
             progressDialog.setMessage("Loading...");
             progressDialog.show();
             try {
-//                if(bundle.getString("action").equals("getAll")){
+                Log.d("BBB",bundle.getString("action"));
+                if(bundle.getString("action").equals("getAll"))
                     orderList = new OrderGetAllTask().execute(url).get();
-//                }
-//                    orderList = new OrderGetByStateTask().execute(url).get();
-
+                if(bundle.getString("action").equals("getByState"))
+                    orderList = new OrderGetByStateTask().execute(url).get();
+                if(bundle.getString("action").equals("getBycomState"))
+                    orderList = new OrderGetBycomStateTask().execute(url).get();
 
             } catch (Exception e) {
                 Log.e(TAG, e.toString());

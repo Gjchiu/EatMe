@@ -35,6 +35,8 @@
         <activity
             android:name=".OrderActivity"
             android:parentActivityName="com.example.george.eatme.MainActivity"/>
+        <activity
+            android:name=".LoginActivty"/>
 
     </application>
 

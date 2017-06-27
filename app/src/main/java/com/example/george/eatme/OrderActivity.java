@@ -11,25 +11,17 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.Toast;
+
 
 import com.example.george.eatme.Order.OrderFragment;
 
-import java.util.HashSet;
-import java.util.Set;
-
-
 public class OrderActivity extends AppCompatActivity {
-    Bundle bundle;
+    Bundle bundle1,bundle2,bundle3;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bundle = new Bundle();
-        bundle.putString("action","getAll");
         setContentView(R.layout.activity_order);
+        newbundle();
         setToolbar();
         setFragmentTabHost();
 
@@ -59,23 +51,32 @@ public class OrderActivity extends AppCompatActivity {
         //LessonOneFragment class，無夾帶Bundle資訊。
         mTabHost.addTab(mTabHost.newTabSpec("one")
                         .setIndicator("全部訂單")
-                ,OrderFragment.class, bundle);
+                ,OrderFragment.class, bundle1);
 
         //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("two")
                         .setIndicator("未取餐")
-                ,OrderFragment.class,bundle);
+                ,OrderFragment.class,bundle2);
 
         //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("three")
                         .setIndicator("已取餐")
-                ,OrderFragment.class, bundle);
+                ,OrderFragment.class, bundle3);
     }
     public void setToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
         toolbar.setTitle("訂單查詢");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void newbundle(){
+        bundle1 = new Bundle();
+        bundle1.putString("action","getAll");
+        bundle2 = new Bundle();
+        bundle2.putString("action","getByState");
+        bundle3 = new Bundle();
+        bundle3.putString("action","getBycomState");
     }
 
 

@@ -60,7 +60,7 @@
             android:gravity="center_horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/btnordermeal"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
@@ -70,7 +70,7 @@
                 app:srcCompat="@drawable/fork" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/btnmember"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="#E6CDA0"
@@ -78,7 +78,7 @@
                 app:srcCompat="@drawable/member" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/btntakemeal"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="#E6CDA0"
@@ -93,7 +93,7 @@
             android:gravity="center_horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/btnorder"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
@@ -102,12 +102,20 @@
                 app:srcCompat="@drawable/order" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/btnnews"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="#E6CDA0"
                 android:layout_marginRight="10dp"
                 app:srcCompat="@drawable/message" />
+
+            <ImageButton
+                android:id="@+id/btnscan"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#E6CDA0"
+                android:visibility="invisible"
+                android:layout_marginRight="10dp" />
 
         </TableRow>
 
