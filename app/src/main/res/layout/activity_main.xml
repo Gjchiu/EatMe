@@ -21,12 +21,6 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="264dp"
-                android:layout_height="72dp"
-                android:layout_gravity="center"
-                android:src="@drawable/logo" />
         </FrameLayout>
 
     </android.support.v7.widget.Toolbar>
@@ -43,6 +37,7 @@
         android:id="@+id/indicator"
         android:layout_width = "fill_parent"
         android:layout_height = "wrap_content"
+        android:gravity="center"
         android:padding = "10dp"
         android:layout_marginTop="5dp">
     </com.viewpagerindicator.CirclePageIndicator>
@@ -125,6 +120,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.91"
-        android:background="#E18769"></LinearLayout>
+        android:background="#E18769"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="264dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -53,17 +53,17 @@ public class OrderFragment extends android.support.v4.app.Fragment{
             try {
                 Log.d("BBB",bundle.getString("action"));
                 if(bundle.getString("action").equals("getAll"))
-                    orderList = new OrderGetAllTask().execute(url).get();
+                    orderList = new OrderGetAllTask().execute(url,bundle.getString("memid")).get();
                 if(bundle.getString("action").equals("getByState"))
-                    orderList = new OrderGetByStateTask().execute(url).get();
+                    orderList = new OrderGetByStateTask().execute(url,bundle.getString("memid")).get();
                 if(bundle.getString("action").equals("getBycomState"))
-                    orderList = new OrderGetBycomStateTask().execute(url).get();
+                    orderList = new OrderGetBycomStateTask().execute(url,bundle.getString("memid")).get();
 
             } catch (Exception e) {
                 Log.e(TAG, e.toString());
             }
             if (orderList == null || orderList.isEmpty()) {
-                Common.showToast(getActivity(), "沒連線");
+                Common.showToast(getActivity(), "無訂單");
             } else {
                 OrderRecyclerViewAdapter orderRecyclerViewAdapter =  new OrderRecyclerViewAdapter(getActivity(), orderList);
                 rvOrder.setAdapter(orderRecyclerViewAdapter);

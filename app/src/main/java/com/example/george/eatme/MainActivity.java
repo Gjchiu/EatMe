@@ -11,7 +11,7 @@ import android.view.View;
 
 import android.widget.Toast;
 
-import com.example.george.eatme.Area.AreaActivity;
+import com.example.george.eatme.Member.Member;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     List<Integer> list;
     Timer timer;
     PageIndicator pageIndicator;
+    public Member member;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        member = (Member) getIntent().getSerializableExtra("member");
+
         viewpager = (ViewPager)findViewById(R.id.viewpager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this,getList());
         viewpager.setAdapter(viewPagerAdapter);
@@ -63,12 +66,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void covertArea(View view) {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, AreaActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("member",member);
+        intent.putExtras(bundle);
+        intent.setClass(MainActivity.this, OedrMealActivity.class);
         startActivity(intent);
     }
 
     public void convertToOrder(View view) {
         Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("member",member);
+        intent.putExtras(bundle);
         intent.setClass(MainActivity.this, OrderActivity.class);
         startActivity(intent);
     }

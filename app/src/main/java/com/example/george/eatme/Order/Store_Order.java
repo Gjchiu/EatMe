@@ -11,9 +11,9 @@ public class Store_Order {
     private Timestamp order_time;
     private String mem_id;
     private String store_id;
-    private Integer order_state;
+    private String order_state;
     private Integer totalprice;
-    private Integer order_way;
+    private String order_way;
     private String receive_address;
     private byte[] qrcode;
     private String order_note;
@@ -61,12 +61,20 @@ public class Store_Order {
         this.store_id = store_id;
     }
 
-    public Integer getOrder_state() {
+    public String getOrder_state() {
         return order_state;
     }
 
-    public void setOrder_state(Integer order_state) {
+    public void setOrder_state(String order_state) {
         this.order_state = order_state;
+    }
+
+    public String getOrder_way() {
+        return order_way;
+    }
+
+    public void setOrder_way(String order_way) {
+        this.order_way = order_way;
     }
 
     public Integer getTotalprice() {
@@ -77,13 +85,7 @@ public class Store_Order {
         this.totalprice = totalprice;
     }
 
-    public Integer getOrder_way() {
-        return order_way;
-    }
 
-    public void setOrder_way(Integer order_way) {
-        this.order_way = order_way;
-    }
 
     public String getReceive_address() {
         return receive_address;

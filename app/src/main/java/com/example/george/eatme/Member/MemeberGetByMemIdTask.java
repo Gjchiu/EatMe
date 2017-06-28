@@ -25,12 +25,12 @@ public class MemeberGetByMemIdTask extends AsyncTask<Object, Integer, Member> {
     @Override
     protected Member doInBackground(Object... params) {
         String url = params[0].toString();
-        String accmount = params[1].toString();
-        String password = params[2].toString();
+        String account = params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
-        jsonObject.addProperty("accmount", accmount);
+        jsonObject.addProperty("account", account);
+        Log.d("account",account);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {

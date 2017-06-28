@@ -1,6 +1,7 @@
 package com.example.george.eatme;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,16 +12,21 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
 
 
+import com.example.george.eatme.Member.Member;
 import com.example.george.eatme.Order.OrderFragment;
 
 public class OrderActivity extends AppCompatActivity {
     Bundle bundle1,bundle2,bundle3;
+    Member member;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+        member = (Member)getIntent().getSerializableExtra("member");
         newbundle();
         setToolbar();
         setFragmentTabHost();
@@ -70,13 +76,34 @@ public class OrderActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //do whatever
+                Intent intent = new Intent();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("member",member);
+                intent.putExtras(bundle);
+                intent.setClass(this, MainActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
     public void newbundle(){
         bundle1 = new Bundle();
         bundle1.putString("action","getAll");
+        bundle1.putString("memid",member.getMem_id());
         bundle2 = new Bundle();
         bundle2.putString("action","getByState");
+        bundle2.putString("memid",member.getMem_id());
         bundle3 = new Bundle();
         bundle3.putString("action","getBycomState");
+        bundle3.putString("memid",member.getMem_id());
     }
 
 

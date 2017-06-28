@@ -3,6 +3,7 @@ package com.example.george.eatme.Order;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.george.eatme.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
@@ -29,9 +30,11 @@ class OrderGetByStateTask extends AsyncTask<Object, Integer, List<Store_Order>> 
     @Override
     protected List<Store_Order> doInBackground(Object... params) {
         String url = params[0].toString();
+        String memid = params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
+        jsonObject.addProperty("memid", memid);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {

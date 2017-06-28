@@ -42,7 +42,7 @@ public class LoginActivty extends AppCompatActivity{
             progressDialog.show();
             try {
 
-                member = new MemeberGetByMemIdTask().execute(url,account,password).get();
+                member = new MemeberGetByMemIdTask().execute(url,account).get();
                 if(account.equals(member.getMem_mail())||password.equals(member.getMem_pw())){
                     Bundle bundle = new Bundle();
                     Intent intent = new Intent();
@@ -51,15 +51,12 @@ public class LoginActivty extends AppCompatActivity{
                     intent.putExtras(bundle);
                     startActivity(intent);
                     finish();
-                }else{
-                    Toast.makeText(this,"塞你娘",Toast.LENGTH_SHORT);
                 }
-
             } catch (Exception e) {
                 Log.e(TAG, e.toString());
             }
             if (member == null) {
-                Common.showToast(this, "沒連線");
+                Common.showToast(this, "帳號  密碼錯誤");
             } else {
             }
             progressDialog.cancel();
