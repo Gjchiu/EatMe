@@ -10,6 +10,7 @@ import java.util.List;
 public class Area {
     List<String> arealist;
 
+
     public List<String> getlist(){
         arealist = new ArrayList<>();
         arealist.add("台北市");

@@ -10,7 +10,11 @@
     android:layout_height="60dp"
     android:background="#E18769"
     app:titleTextAppearance="@style/toolbar_style">
-
+    <TextView
+        android:layout_width="272dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="24sp" />
 </android.support.v7.widget.Toolbar>
     <android.support.v4.app.FragmentTabHost
         android:id="@android:id/tabhost"
