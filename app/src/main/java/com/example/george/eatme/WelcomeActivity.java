@@ -24,7 +24,7 @@ public class WelcomeActivity extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome_layout);
+        setContentView(R.layout.activity_welcome);
         askPermissions();
         myHandler.sendEmptyMessageDelayed(GOTO_MAIN_ACTIVITY, 3000); //3秒跳轉
     }

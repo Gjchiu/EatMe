@@ -26,10 +26,13 @@ public class LoginActivty extends AppCompatActivity{
     public void findView(){
         edaccount = (EditText) findViewById(R.id.account);
         edpassword = (EditText) findViewById(R.id.password);
+        edaccount.setText("wang@abc.com");
+        edpassword.setText("group1");
     }
 
 
     public void checkmember(View view) {
+
         String account = edaccount.getText().toString();
         String password = edpassword.getText().toString();
 
