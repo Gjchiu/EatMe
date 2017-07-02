@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.george.eatme.OrderActivity;
 import com.example.george.eatme.R;
@@ -23,35 +24,23 @@ import java.util.List;
  * Created by George on 2017/6/22.
  */
 
-public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecyclerViewAdapter.ViewHolder> implements View.OnClickListener{
+public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecyclerViewAdapter.ViewHolder> {
     private LayoutInflater layoutInflater;
     private List<Store_Order> orderList;
     private boolean[] orderExpanded;
-    private OnItemClickListener mOnItemClickListener = null;
+    Context context;
 
-    @Override
-    public void onClick(View view) {
-        if (mOnItemClickListener != null) {
-            //注意这里使用getTag方法获取position
-            mOnItemClickListener.onItemClick(view,(int)view.getTag());
-        }
-    }
-
-    public static interface OnItemClickListener {
-        void onItemClick(View view , int position);
-    }
 
     public OrderRecyclerViewAdapter(Context context, List<Store_Order> orderList) {
         layoutInflater = LayoutInflater.from(context);
         this.orderList = orderList;
+        this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = layoutInflater.inflate(R.layout.order_recyleview_item, parent, false);
         ViewHolder vh = new ViewHolder(itemView);
-        //将创建的View注册点击事件
-        itemView.setOnClickListener(this);
         return new ViewHolder(itemView);
     }
 
@@ -75,8 +64,13 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
                                     "\n訂餐店家："+ order.getStore_name() +
                                     "\n總金額："+ order.getTotalprice()+
                                     "              狀態："+order.getOrder_state());
-        //将position保存在itemView的Tag中，以便点击时进行获取
-        holder.itemView.setTag(position);
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"123",Toast.LENGTH_SHORT).show();
+            }
+        });
+
 //        holder.tvOrderDetail.setText(order.getTotalprice().toString());
 //        holder.tvOrderDetail.setVisibility(
 //                orderExpanded[position] ? View.VISIBLE : View.GONE);
@@ -93,9 +87,6 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
         return orderList.size();
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.mOnItemClickListener = listener;
-    }
 
 //    private void expand(int position) {
 //        // 被點擊的資料列才會彈出內容，其他資料列的內容會自動縮起來

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,14 +11,7 @@
                     "endOffset": 95
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 44,
-                        "endOffset": 95
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -30,14 +23,7 @@
                     "endOffset": 143
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 100,
-                        "endColumn": 47,
-                        "endOffset": 143
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -49,14 +35,7 @@
                     "endOffset": 193
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 148,
-                        "endColumn": 49,
-                        "endOffset": 193
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -68,14 +47,7 @@
                     "endOffset": 243
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 198,
-                        "endColumn": 49,
-                        "endOffset": 243
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -87,14 +59,7 @@
                     "endOffset": 306
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 248,
-                        "endColumn": 62,
-                        "endOffset": 306
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -106,14 +71,7 @@
                     "endOffset": 366
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 311,
-                        "endColumn": 59,
-                        "endOffset": 366
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -125,14 +83,7 @@
                     "endOffset": 427
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 371,
-                        "endColumn": 60,
-                        "endOffset": 427
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -144,14 +95,7 @@
                     "endOffset": 494
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 432,
-                        "endColumn": 66,
-                        "endOffset": 494
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -163,14 +107,7 @@
                     "endOffset": 557
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 499,
-                        "endColumn": 62,
-                        "endOffset": 557
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -182,14 +119,7 @@
                     "endOffset": 627
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 562,
-                        "endColumn": 69,
-                        "endOffset": 627
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -197,17 +127,17 @@
                     "startLine": 12,
                     "startColumn": 4,
                     "startOffset": 632,
-                    "endColumn": 71,
-                    "endOffset": 699
+                    "endColumn": 69,
+                    "endOffset": 697
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
                         "startOffset": 632,
-                        "endColumn": 71,
-                        "endOffset": 699
+                        "endColumn": 69,
+                        "endOffset": 697
                     }
                 }
             },
@@ -215,732 +145,461 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 704,
+                    "startOffset": 702,
                     "endColumn": 73,
-                    "endOffset": 773
+                    "endOffset": 771
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 704,
-                        "endColumn": 73,
-                        "endOffset": 773
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 778,
+                    "startOffset": 776,
                     "endColumn": 73,
-                    "endOffset": 847
+                    "endOffset": 845
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 778,
-                        "endColumn": 73,
-                        "endOffset": 847
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 852,
+                    "startOffset": 850,
                     "endColumn": 75,
-                    "endOffset": 923
+                    "endOffset": 921
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 852,
-                        "endColumn": 75,
-                        "endOffset": 923
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 928,
+                    "startOffset": 926,
                     "endColumn": 72,
-                    "endOffset": 996
+                    "endOffset": 994
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 928,
-                        "endColumn": 72,
-                        "endOffset": 996
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1001,
+                    "startOffset": 999,
                     "endColumn": 74,
-                    "endOffset": 1071
+                    "endOffset": 1069
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1001,
-                        "endColumn": 74,
-                        "endOffset": 1071
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1076,
+                    "startOffset": 1074,
                     "endColumn": 70,
-                    "endOffset": 1142
+                    "endOffset": 1140
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1076,
-                        "endColumn": 70,
-                        "endOffset": 1142
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1147,
+                    "startOffset": 1145,
                     "endColumn": 78,
-                    "endOffset": 1221
+                    "endOffset": 1219
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1147,
-                        "endColumn": 78,
-                        "endOffset": 1221
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 1226,
+                    "startOffset": 1224,
                     "endColumn": 61,
-                    "endOffset": 1283
+                    "endOffset": 1281
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1226,
-                        "endColumn": 61,
-                        "endOffset": 1283
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 1288,
+                    "startOffset": 1286,
                     "endColumn": 62,
-                    "endOffset": 1346
+                    "endOffset": 1344
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1288,
-                        "endColumn": 62,
-                        "endOffset": 1346
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 1351,
+                    "startOffset": 1349,
                     "endColumn": 77,
-                    "endOffset": 1424
+                    "endOffset": 1422
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 1351,
-                        "endColumn": 77,
-                        "endOffset": 1424
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1429,
+                    "startOffset": 1427,
                     "endColumn": 78,
-                    "endOffset": 1503
+                    "endOffset": 1501
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 1429,
-                        "endColumn": 78,
-                        "endOffset": 1503
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1508,
+                    "startOffset": 1506,
                     "endColumn": 92,
-                    "endOffset": 1596
+                    "endOffset": 1594
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 24,
-                        "startColumn": 4,
-                        "startOffset": 1508,
-                        "endColumn": 92,
-                        "endOffset": 1596
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1601,
+                    "startOffset": 1599,
                     "endColumn": 92,
-                    "endOffset": 1689
+                    "endOffset": 1687
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 25,
-                        "startColumn": 4,
-                        "startOffset": 1601,
-                        "endColumn": 92,
-                        "endOffset": 1689
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 1694,
+                    "startOffset": 1692,
                     "endColumn": 107,
-                    "endOffset": 1797
+                    "endOffset": 1795
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 26,
-                        "startColumn": 4,
-                        "startOffset": 1694,
-                        "endColumn": 107,
-                        "endOffset": 1797
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 1802,
+                    "startOffset": 1800,
                     "endColumn": 107,
-                    "endOffset": 1905
+                    "endOffset": 1903
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 27,
-                        "startColumn": 4,
-                        "startOffset": 1802,
-                        "endColumn": 107,
-                        "endOffset": 1905
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 4215,
+                    "startOffset": 4213,
                     "endColumn": 61,
-                    "endOffset": 4272
+                    "endOffset": 4270
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 40,
-                        "startColumn": 4,
-                        "startOffset": 4215,
-                        "endColumn": 61,
-                        "endOffset": 4272
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 4277,
+                    "startOffset": 4275,
                     "endColumn": 67,
-                    "endOffset": 4340
+                    "endOffset": 4338
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 41,
-                        "startColumn": 4,
-                        "startOffset": 4277,
-                        "endColumn": 67,
-                        "endOffset": 4340
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 4345,
+                    "startOffset": 4343,
                     "endColumn": 62,
-                    "endOffset": 4403
+                    "endOffset": 4401
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 42,
-                        "startColumn": 4,
-                        "startOffset": 4345,
-                        "endColumn": 62,
-                        "endOffset": 4403
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 4408,
+                    "startOffset": 4406,
                     "endColumn": 64,
-                    "endOffset": 4468
+                    "endOffset": 4466
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 43,
-                        "startColumn": 4,
-                        "startOffset": 4408,
-                        "endColumn": 64,
-                        "endOffset": 4468
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 4473,
+                    "startOffset": 4471,
                     "endColumn": 65,
-                    "endOffset": 4534
+                    "endOffset": 4532
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 44,
-                        "startColumn": 4,
-                        "startOffset": 4473,
-                        "endColumn": 65,
-                        "endOffset": 4534
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 4539,
+                    "startOffset": 4537,
                     "endColumn": 66,
-                    "endOffset": 4601
+                    "endOffset": 4599
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 45,
-                        "startColumn": 4,
-                        "startOffset": 4539,
-                        "endColumn": 66,
-                        "endOffset": 4601
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 4606,
+                    "startOffset": 4604,
                     "endColumn": 77,
-                    "endOffset": 4679
+                    "endOffset": 4677
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 46,
-                        "startColumn": 4,
-                        "startOffset": 4606,
-                        "endColumn": 77,
-                        "endOffset": 4679
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 4684,
+                    "startOffset": 4682,
                     "endColumn": 89,
-                    "endOffset": 4769
+                    "endOffset": 4767
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 47,
-                        "startColumn": 4,
-                        "startOffset": 4684,
-                        "endColumn": 89,
-                        "endOffset": 4769
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 4774,
+                    "startOffset": 4772,
                     "endColumn": 72,
-                    "endOffset": 4842
+                    "endOffset": 4840
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 48,
-                        "startColumn": 4,
-                        "startOffset": 4774,
-                        "endColumn": 72,
-                        "endOffset": 4842
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 4847,
+                    "startOffset": 4845,
                     "endColumn": 68,
-                    "endOffset": 4911
+                    "endOffset": 4909
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 49,
-                        "startColumn": 4,
-                        "startOffset": 4847,
-                        "endColumn": 68,
-                        "endOffset": 4911
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 4916,
+                    "startOffset": 4914,
                     "endColumn": 64,
-                    "endOffset": 4976
+                    "endOffset": 4974
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 50,
-                        "startColumn": 4,
-                        "startOffset": 4916,
-                        "endColumn": 64,
-                        "endOffset": 4976
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 4981,
+                    "startOffset": 4979,
                     "endColumn": 67,
-                    "endOffset": 5044
+                    "endOffset": 5042
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 51,
-                        "startColumn": 4,
-                        "startOffset": 4981,
-                        "endColumn": 67,
-                        "endOffset": 5044
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 5049,
+                    "startOffset": 5047,
                     "endColumn": 65,
-                    "endOffset": 5110
+                    "endOffset": 5108
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 52,
-                        "startColumn": 4,
-                        "startOffset": 5049,
-                        "endColumn": 65,
-                        "endOffset": 5110
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 5115,
+                    "startOffset": 5113,
                     "endColumn": 68,
-                    "endOffset": 5179
+                    "endOffset": 5177
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 53,
-                        "startColumn": 4,
-                        "startOffset": 5115,
-                        "endColumn": 68,
-                        "endOffset": 5179
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 5184,
+                    "startOffset": 5182,
                     "endColumn": 78,
-                    "endOffset": 5258
+                    "endOffset": 5256
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 54,
-                        "startColumn": 4,
-                        "startOffset": 5184,
-                        "endColumn": 78,
-                        "endOffset": 5258
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 5263,
+                    "startOffset": 5261,
                     "endColumn": 69,
-                    "endOffset": 5328
+                    "endOffset": 5326
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 55,
-                        "startColumn": 4,
-                        "startOffset": 5263,
-                        "endColumn": 69,
-                        "endOffset": 5328
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 5333,
+                    "startOffset": 5331,
                     "endColumn": 72,
-                    "endOffset": 5401
+                    "endOffset": 5399
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 56,
-                        "startColumn": 4,
-                        "startOffset": 5333,
-                        "endColumn": 72,
-                        "endOffset": 5401
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 5406,
+                    "startOffset": 5404,
                     "endColumn": 73,
-                    "endOffset": 5475
+                    "endOffset": 5473
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 57,
-                        "startColumn": 4,
-                        "startOffset": 5406,
-                        "endColumn": 73,
-                        "endOffset": 5475
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 5480,
+                    "startOffset": 5478,
                     "endLine": 61,
                     "endColumn": 12,
-                    "endOffset": 5675
+                    "endOffset": 5673
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 58,
-                        "startColumn": 4,
-                        "startOffset": 5480,
-                        "endLine": 61,
-                        "endColumn": 12,
-                        "endOffset": 5675
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 62,
                     "startColumn": 4,
-                    "startOffset": 5680,
+                    "startOffset": 5678,
                     "endLine": 65,
                     "endColumn": 12,
-                    "endOffset": 5928
+                    "endOffset": 5926
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 62,
-                        "startColumn": 4,
-                        "startOffset": 5680,
-                        "endLine": 65,
-                        "endColumn": 12,
-                        "endOffset": 5928
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 66,
                     "startColumn": 4,
-                    "startOffset": 5933,
+                    "startOffset": 5931,
                     "endLine": 67,
                     "endColumn": 12,
-                    "endOffset": 5967
+                    "endOffset": 5965
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 66,
-                        "startColumn": 4,
-                        "startOffset": 5933,
-                        "endLine": 67,
-                        "endColumn": 12,
-                        "endOffset": 5967
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 68,
                     "startColumn": 4,
-                    "startOffset": 5972,
+                    "startOffset": 5970,
                     "endLine": 71,
                     "endColumn": 12,
-                    "endOffset": 6157
+                    "endOffset": 6155
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 68,
-                        "startColumn": 4,
-                        "startOffset": 5972,
-                        "endLine": 71,
-                        "endColumn": 12,
-                        "endOffset": 6157
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 72,
                     "startColumn": 4,
-                    "startOffset": 6162,
+                    "startOffset": 6160,
                     "endLine": 82,
                     "endColumn": 12,
-                    "endOffset": 6759
+                    "endOffset": 6757
                 },
                 "from": {
-                    "file": "D:\\Android_ex\\Eatme_ver2\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 72,
-                        "startColumn": 4,
-                        "startOffset": 6162,
-                        "endLine": 82,
-                        "endColumn": 12,
-                        "endOffset": 6759
-                    }
+                    "file": "E:\\AndroidStudioProjects\\Git\\EatMe\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             }
         ]

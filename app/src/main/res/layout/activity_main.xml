@@ -72,6 +72,7 @@
                 android:layout_height="100dp"
                 android:background="#E6CDA0"
                 android:layout_marginRight="10dp"
+                android:onClick="coverMember"
                 app:srcCompat="@drawable/member" />
 
             <ImageButton

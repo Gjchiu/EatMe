@@ -82,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void coverMember(View view) {
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("member",member);
+        intent.putExtras(bundle);
+        intent.setClass(MainActivity.this, MemberActiviy.class);
+        startActivity(intent);
+    }
+
     public class MyTimeTask extends TimerTask{
         @Override
         public void run() {

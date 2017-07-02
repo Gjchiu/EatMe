@@ -37,6 +37,9 @@
             android:parentActivityName="com.example.george.eatme.MainActivity"/>
         <activity
             android:name=".LoginActivty"/>
+        <activity
+            android:name=".MemberActiviy"
+            android:parentActivityName="com.example.george.eatme.MainActivity"/>
 
     </application>
 

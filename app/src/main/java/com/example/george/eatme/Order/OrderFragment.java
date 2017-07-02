@@ -61,12 +61,6 @@ public class OrderFragment extends android.support.v4.app.Fragment{
             } else {
                 OrderRecyclerViewAdapter orderRecyclerViewAdapter =  new OrderRecyclerViewAdapter(getActivity(), orderList);
                 rvOrder.setAdapter(orderRecyclerViewAdapter);
-                orderRecyclerViewAdapter.setOnItemClickListener(new OrderRecyclerViewAdapter.OnItemClickListener(){
-                    @Override
-                    public void onItemClick(View view , int position){
-                        Log.d("Recycle",String.valueOf(position));
-                    }
-                });
             }
             progressDialog.cancel();
 

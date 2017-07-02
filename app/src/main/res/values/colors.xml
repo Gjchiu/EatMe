@@ -18,6 +18,6 @@
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
 
-    <color name="body_color">#FFF4D7</color>
+    <color name="body_color">#fff4d7</color>
     <color name="toolbar_color">#AF2323</color>
 </resources>
