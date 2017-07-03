@@ -24,7 +24,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/chooseArea"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
         </FrameLayout>
 

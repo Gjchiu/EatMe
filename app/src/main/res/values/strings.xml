@@ -42,4 +42,5 @@
     <string name="msg_NoDataFound">No data found</string>
     <string name="msg_NoCameraAppsFound">no camera apps found</string>
     <string name="text_NotGranted">not granted</string>
+    <string name="serchorder">訂單查詢</string>
 </resources>

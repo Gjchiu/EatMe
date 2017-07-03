@@ -24,12 +24,7 @@ public class OedrMealActivity extends AppCompatActivity {
 
     }
 
-    private void switchFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction =
-                getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, fragment);
-        fragmentTransaction.commit();
-    }
+
 
 
 }
