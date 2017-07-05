@@ -23,7 +23,7 @@
         android:gravity="left"
         android:text="會員密碼"
         android:textSize="28dp"
-        android:background="@color/body_color">
+        android:background="#00000000">
     </Button>
 
     <TextView

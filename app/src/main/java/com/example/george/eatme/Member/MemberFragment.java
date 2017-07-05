@@ -21,6 +21,7 @@ public class MemberFragment extends Fragment {
     private final static String TAG = "MemberFragment";
     Member member;
     Bundle bundle;
+    MemberFragment memberFragment;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class MemberFragment extends Fragment {
         tvmemmail.setText(member.getMem_mail());
         tvmemphone.setText(member.getMem_phone());
         tvmemstate.setText(member.getMem_state());
-
+        memberFragment = new MemberFragment();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

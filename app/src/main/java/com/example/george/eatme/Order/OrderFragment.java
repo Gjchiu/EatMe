@@ -38,7 +38,7 @@ public class OrderFragment extends android.support.v4.app.Fragment{
     public void onStart() {
         super.onStart();
             if (Common.networkConnected(getActivity())) {
-                String url = Common.URL + "Store_OrderServlet1";
+                String url = Common.URL + "MemberServlet1";
                 List<Store_Order> orderList = null;
 
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
