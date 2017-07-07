@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="E:\AndroidStudioProjects\Git\EatMe\library\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\AndroidStudioProjects\Git\EatMe\library\src\debug\jniLibs"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="D:\Android_ex\Eatme_ver2\EatMe\library\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\Android_ex\Eatme_ver2\EatMe\library\src\debug\jniLibs"/></dataSet></merger>
+>>>>>>> origin/master
