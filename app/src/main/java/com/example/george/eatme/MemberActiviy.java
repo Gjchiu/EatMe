@@ -33,7 +33,7 @@ public class MemberActiviy extends AppCompatActivity{
 
     }
     public void setToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.member_toolbar);
         toolbar.setTitle("會員資料");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

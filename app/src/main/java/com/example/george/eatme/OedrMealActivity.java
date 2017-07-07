@@ -18,13 +18,11 @@ public class OedrMealActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordermeal);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.area_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.ordermeal_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
-
-
 
 
 }
