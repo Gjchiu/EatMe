@@ -38,14 +38,14 @@ public class OrderFragment extends android.support.v4.app.Fragment{
     public void onStart() {
         super.onStart();
             if (Common.networkConnected(getActivity())) {
-                String url = Common.URL + "MemberServlet1";
+                String url = Common.URL + "Store_OrderServlet1";
                 List<Store_Order> orderList = null;
 
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading...");
             progressDialog.show();
             try {
-                Log.d("BBB",bundle.getString("action"));
+                Log.d("BBB",bundle.getString("memid"));
                 if(bundle.getString("action").equals("getAll"))
                     orderList = new OrderGetAllTask().execute(url,bundle.getString("memid")).get();
                 if(bundle.getString("action").equals("getByState"))

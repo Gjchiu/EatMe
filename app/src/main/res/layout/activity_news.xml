@@ -3,11 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
-
+    android:layout_height="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/area_toolbar"
+        android:id="@+id/new_toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#E18769"
@@ -18,23 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
-
             <TextView
                 android:layout_width="272dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/chooseArea"
+                android:text="最新消息"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
-
         </FrameLayout>
-
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvOrders"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-    </LinearLayout>
-
+        android:layout_height="match_parent" />
 </LinearLayout>

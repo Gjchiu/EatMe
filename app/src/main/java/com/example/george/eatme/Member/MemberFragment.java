@@ -41,15 +41,16 @@ public class MemberFragment extends Fragment {
         tvmemphone.setText(member.getMem_phone());
         tvmemstate.setText(member.getMem_state());
         memberFragment = new MemberFragment();
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                switchFragment(new MemberPwFragment());
-//                bundle = new Bundle();
-//                bundle.putSerializable("member",member);
-//                memberFragment.setArguments(bundle);
-//            }
-//        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MemberPwFragment memberPwFragment = new MemberPwFragment();
+                switchFragment(memberPwFragment);
+                bundle = new Bundle();
+                bundle.putSerializable("member",member);
+                memberPwFragment.setArguments(bundle);
+            }
+        });
     }
 
     private void switchFragment(Fragment fragment) {

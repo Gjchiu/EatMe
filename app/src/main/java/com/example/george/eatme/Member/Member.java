@@ -4,6 +4,8 @@ package com.example.george.eatme.Member;
  * Created by Java on 2017/6/27.
  */
 
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -19,6 +21,15 @@ public class Member implements Serializable {
     private Timestamp mem_start_time;
     private Timestamp mem_end_time;
     private Number mem_money;
+    private Boolean autoLogin;
+
+    public Boolean getAutoLogin() {
+        return autoLogin;
+    }
+
+    public void setAutoLogin(Boolean autoLogin) {
+        this.autoLogin = autoLogin;
+    }
 
     public String getMem_id() {
         return mem_id;

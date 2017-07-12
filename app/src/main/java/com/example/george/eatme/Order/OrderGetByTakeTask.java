@@ -1,4 +1,4 @@
-package com.example.george.eatme.Member;
+package com.example.george.eatme.Order;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -15,26 +15,25 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
+
 
 /**
- * Created by Java on 2017/7/5.
+ * Created by George on 2017/6/22.
  */
 
-public class MemberUpdatePwTask extends AsyncTask<Object, Integer, Member> {
-    private final static String TAG = "MemberUpdatePwTask";
-    private final static String ACTION = "updatePw";
+public class OrderGetByTakeTask extends AsyncTask<Object, Integer, List<Store_Order>> {
+    private final static String TAG = "OrderGetAllTask";
+    private final static String ACTION = "getBytake";
 
     @Override
-    protected Member doInBackground(Object... params) {
+    protected List<Store_Order> doInBackground(Object... params) {
         String url = params[0].toString();
-        String account = params[1].toString();
-        String newpassword = params[2].toString();
+        String memid = params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
-        jsonObject.addProperty("account", account);
-        jsonObject.addProperty("newpassword", newpassword);
-        Log.d("account",account);
+        jsonObject.addProperty("memid",memid);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {
@@ -43,7 +42,7 @@ public class MemberUpdatePwTask extends AsyncTask<Object, Integer, Member> {
         }
 
         Gson gson = new Gson();
-        Type listType = new TypeToken<Member>() {}.getType();
+        Type listType = new TypeToken<List<Store_Order>>() {}.getType();
         return gson.fromJson(jsonIn, listType);
     }
 

@@ -1,6 +1,7 @@
 package com.example.george.eatme;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 
 import com.example.george.eatme.Member.Member;
 import com.example.george.eatme.Member.MemberFragment;
+import com.google.gson.Gson;
 
 /**
  * Created by Java on 2017/6/30.
@@ -23,7 +25,7 @@ public class MemberActiviy extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member);
-        member = (Member) getIntent().getSerializableExtra("member");
+        loadPreferences();
         setToolbar();
         MemberFragment memberFragment = new MemberFragment();
         switchFragment(memberFragment);
@@ -33,32 +35,23 @@ public class MemberActiviy extends AppCompatActivity{
 
     }
     public void setToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
-        toolbar.setTitle("會員資料");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                //do whatever
-                Intent intent = new Intent();
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("member",member);
-                intent.putExtras(bundle);
-                intent.setClass(this, MainActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+            Toolbar toolbar = (Toolbar) findViewById(R.id.member_toolbar);
+            toolbar.setTitle("會員資料");
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void switchFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.memlayout, fragment);
+        fragmentTransaction.replace(R.id.memlayout, fragment).addToBackStack(null);
         fragmentTransaction.commit();
+    }
+    private void loadPreferences() {
+        SharedPreferences preferences
+                = getSharedPreferences("Login",MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = preferences.getString("member", "");
+        member = gson.fromJson(json, Member.class);
     }
 }

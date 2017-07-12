@@ -1,9 +1,11 @@
 package com.example.george.eatme.Member;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,9 @@ import android.widget.Toast;
 
 import com.example.george.eatme.Common;
 import com.example.george.eatme.R;
+import com.google.gson.Gson;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Java on 2017/7/3.
@@ -30,18 +35,18 @@ public class MemberPwFragment extends Fragment {
         member = (Member)getArguments().getSerializable("member");
 
         Button button = (Button)view.findViewById(R.id.btnupdatepass);
-        final EditText edtpw = (EditText)view.findViewById(R.id.edtnewpw);
+        final EditText edtpw = (EditText)view.findViewById(R.id.edtpw);
         final EditText edtnewpw = (EditText)view.findViewById(R.id.edtnewpw);
         final EditText edtpwcheck = (EditText)view.findViewById(R.id.edtpwcheck);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(edtpw.getText().equals(member.getMem_pw())){
+                if(!(edtpw.getText().toString().trim().equals(member.getMem_pw()))){
                     Toast.makeText(getActivity(),"密碼錯誤",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if(edtnewpw.getText().equals(edtpwcheck.getText())){
+                else if(!(edtnewpw.getText().toString().equals(edtpwcheck.getText().toString()))){
                     Toast.makeText(getActivity(),"確認密碼錯誤",Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -52,7 +57,10 @@ public class MemberPwFragment extends Fragment {
                     progressDialog.setMessage("Loading...");
                     progressDialog.show();
                     try {
-                        member = new MemberUpdatePwTask().execute(url,member.getMem_mail(),edtnewpw.getText()).get();
+                        member = new MemberUpdatePwTask().execute(url,member.getMem_mail(),edtnewpw.getText().toString()).get();
+                        savePreferences();
+                        getActivity().getFragmentManager().popBackStack(null,0);
+                        Toast.makeText(getActivity(),"密碼更改成功",Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         Log.e(TAG, e.toString());
                     }
@@ -64,6 +72,17 @@ public class MemberPwFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void savePreferences() {
+        SharedPreferences preferences
+                = getActivity().getSharedPreferences("Login",MODE_PRIVATE);
+        SharedPreferences.Editor preferencesEditor = preferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(member);
+        preferencesEditor.putString("member", json);
+        preferencesEditor.commit();
+
     }
 
 }

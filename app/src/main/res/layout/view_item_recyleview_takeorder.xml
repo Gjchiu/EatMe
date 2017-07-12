@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp"
+    android:background="#DDFFDD"
+    android:layout_margin="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvtakeorderTitle"
+            android:layout_width="308dp"
+            android:layout_height="match_parent"
+            android:text="Title"
+            android:textColor="#330033"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btntakeorder"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:src="@drawable/serve"
+            android:background="#DDFFDD"/>
+    </LinearLayout>
+
+</LinearLayout>

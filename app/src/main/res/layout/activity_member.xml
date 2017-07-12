@@ -7,18 +7,26 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/order_toolbar"
+        android:id="@+id/member_toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#E18769"
+        android:minHeight="?actionBarSize"
         app:titleTextAppearance="@style/toolbar_style">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
 
         <TextView
             android:layout_width="272dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="24sp"
-             android:textColor="@color/white"/>
+            android:text="會員資料"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+        </FrameLayout>
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout

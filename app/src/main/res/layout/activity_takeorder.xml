@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/body_color"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/area_toolbar"
+        android:id="@+id/takeorder_toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#E18769"
@@ -23,18 +23,15 @@
                 android:layout_width="272dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/chooseArea"
+                android:text="取餐"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
         </FrameLayout>
-
     </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvtakeorder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
