@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,19 +15,18 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 
-
 /**
  * Created by George on 2017/6/22.
  */
 
-public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecyclerViewAdapter.ViewHolder> {
+public class TakeOrderRecyclerViewAdapter extends RecyclerView.Adapter<TakeOrderRecyclerViewAdapter.ViewHolder> {
     private LayoutInflater layoutInflater;
     private List<Store_Order> orderList;
     private boolean[] orderExpanded;
     Context context;
 
 
-    public OrderRecyclerViewAdapter(Context context, List<Store_Order> orderList) {
+    public TakeOrderRecyclerViewAdapter(Context context, List<Store_Order> orderList) {
         layoutInflater = LayoutInflater.from(context);
         this.orderList = orderList;
         this.context = context;
@@ -34,27 +34,27 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = layoutInflater.inflate(R.layout.view_item_recyleview_order, parent, false);
+        View itemView = layoutInflater.inflate(R.layout.view_item_recyleview_takeorder, parent, false);
         ViewHolder vh = new ViewHolder(itemView);
         return new ViewHolder(itemView);
     }
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvOrderTitle, tvOrderDetail;
-
+        TextView tvtakeorderTitle, tvOrderDetail;
+        Button button;
         public ViewHolder(View itemView) {
             super(itemView);
-            tvOrderTitle = (TextView) itemView.findViewById(R.id.tvorderTitle);
+            tvtakeorderTitle = (TextView) itemView.findViewById(R.id.tvtakeorderTitle);
         }
     }
 
     @Override
-    public void onBindViewHolder(final OrderRecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final TakeOrderRecyclerViewAdapter.ViewHolder holder, int position) {
         Store_Order order = orderList.get(position);
         String title = order.getOrder_id();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-        holder.tvOrderTitle.setText("訂單編號：" + title +
+        holder.tvtakeorderTitle.setText("訂單編號：" + title +
                                     "\n日期：" + sdf.format(order.getOrder_time()) +
                                     "\n訂餐店家："+ order.getStore_name() +
                                     "\n總金額："+ order.getTotalprice()+

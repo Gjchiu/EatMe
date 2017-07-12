@@ -1,16 +1,25 @@
 package com.example.george.eatme;
 
-
+import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+
 
 import com.example.george.eatme.Member.Member;
 import com.example.george.eatme.Order.OrderFragment;
+import com.google.gson.Gson;
 
 public class OrderActivity extends AppCompatActivity {
     Bundle bundle1,bundle2,bundle3;
@@ -19,12 +28,19 @@ public class OrderActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        member = (Member)getIntent().getSerializableExtra("member");
+        loadPreferences();
         newbundle();
         setToolbar();
         setFragmentTabHost();
 
     }
+    private void switchFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.commit();
+    }
+
     public  void setFragmentTabHost(){
 
         //獲取TabHost控制元件
@@ -45,38 +61,21 @@ public class OrderActivity extends AppCompatActivity {
                         .setIndicator("全部訂單")
                 ,OrderFragment.class, bundle1);
 
+        //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("two")
-                        .setIndicator("未取餐")
+                        .setIndicator("未完成")
                 ,OrderFragment.class,bundle2);
 
+        //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("three")
                         .setIndicator("已取餐")
                 ,OrderFragment.class, bundle3);
     }
     public void setToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
-        toolbar.setTitle("會員資料");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                //do whatever
-                Intent intent = new Intent();
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("member",member);
-                intent.putExtras(bundle);
-                intent.setClass(this, MainActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
 
     public void newbundle(){
         bundle1 = new Bundle();
@@ -90,5 +89,12 @@ public class OrderActivity extends AppCompatActivity {
         bundle3.putString("memid",member.getMem_id());
     }
 
-
+    private void loadPreferences() {
+        SharedPreferences preferences
+                = getSharedPreferences("Login",MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = preferences.getString("member", "");
+        member = gson.fromJson(json, Member.class);
+        Log.d("member",member.getMem_id());
+    }
 }

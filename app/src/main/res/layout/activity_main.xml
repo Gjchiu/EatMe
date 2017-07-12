@@ -16,15 +16,22 @@
         android:layout_height="60dp"
         android:background="#AF2323"
         android:minHeight="?actionBarSize"
-        app:titleTextAppearance="@style/toolbar_style">
+        app:titleTextAppearance="@style/toolbar_style"
+        android:weightSum="1">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="305dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="吃訂我 訂餐"
+            android:text="          吃訂我 訂餐"
             android:textColor="@color/white"
             android:textSize="28sp" />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_name"
+            android:background="@color/toolbar_color"
+            android:onClick="logout"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -81,6 +88,7 @@
                 android:layout_height="100dp"
                 android:background="#E6CDA0"
                 android:layout_marginRight="10dp"
+                android:onClick="coverttakeorfer"
                 app:srcCompat="@drawable/take" />
 
         </TableRow>

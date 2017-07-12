@@ -40,6 +40,9 @@
         <activity
             android:name=".MemberActiviy"
             android:parentActivityName="com.example.george.eatme.MainActivity"/>
+        <activity
+            android:name=".TakeOrderActivity"
+            android:parentActivityName="com.example.george.eatme.MainActivity"/>
 
     </application>
 

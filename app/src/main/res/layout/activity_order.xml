@@ -21,11 +21,10 @@
                 android:layout_width="272dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/serchorder"
+                android:text="@string/searchorder"
                 android:textSize="24sp" />
 
         </FrameLayout>
-
     </android.support.v7.widget.Toolbar>
     <android.support.v4.app.FragmentTabHost
         android:id="@android:id/tabhost"
