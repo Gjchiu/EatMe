@@ -44,7 +44,7 @@ public class MemberActiviy extends AppCompatActivity{
     private void switchFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.memlayout, fragment).addToBackStack(null);
+        fragmentTransaction.replace(R.id.memlayout, fragment);
         fragmentTransaction.commit();
     }
     private void loadPreferences() {

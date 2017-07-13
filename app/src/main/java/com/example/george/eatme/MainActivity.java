@@ -9,11 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
-
-import android.widget.Toast;
 
 import com.example.george.eatme.Member.Member;
 import com.google.gson.Gson;
@@ -76,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void covertArea(View view) {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, OedrMealActivity.class);
+        intent.setClass(MainActivity.this, OrderMealActivity.class);
         startActivity(intent);
     }
 

@@ -1,6 +1,7 @@
 package com.example.george.eatme.Area;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.List;
 public class AreaAdapter extends BaseAdapter {
     Context context;
     List<String> arealist;
+    String area;
 
     public AreaAdapter(Context context) {
         this.context = context;
@@ -45,9 +47,17 @@ public class AreaAdapter extends BaseAdapter {
             LayoutInflater layoutInflater =LayoutInflater.from(context);
             view = layoutInflater.inflate(R.layout.view_item_area,viewGroup,false);
         }
-        String area = arealist.get(position);
+        area = arealist.get(position);
         TextView textView = (TextView)view.findViewById(R.id.areatvid);
         textView.setText(area);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bunble = new Bundle();
+                bunble.putString("area",area);
+
+            }
+        });
         return view;
     }
 }

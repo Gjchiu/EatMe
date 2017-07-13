@@ -7,7 +7,7 @@
     android:layout_margin="5dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="103dp"
+        android:layout_height="123dp"
         android:orientation="horizontal"
         android:gravity="center">
 
@@ -23,7 +23,7 @@
         <ImageButton
             android:id="@+id/btntakeorder"
             android:layout_width="match_parent"
-            android:layout_height="76dp"
+            android:layout_height="match_parent"
             android:src="@drawable/serve"
             android:background="#DDFFDD"/>
     </LinearLayout>

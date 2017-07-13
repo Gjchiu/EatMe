@@ -1,7 +1,6 @@
 package com.example.george.eatme.Order;
 
 import android.app.Dialog;
-import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.george.eatme.R;
-import com.google.gson.Gson;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
@@ -55,7 +53,6 @@ public class AlertDialogFragment extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         String order =  getArguments().getString("order_id");
-
 
         //註冊離開button事件聆聽
         ImageButton btleave = (ImageButton) view.findViewById(R.id.btnqrcode);
@@ -108,14 +105,9 @@ public class AlertDialogFragment extends DialogFragment {
             // 設定為 QR code 影像
             imgView.setImageBitmap(bitmap);
         }
-        catch (WriterException e)
-        {
+        catch (WriterException e){
             e.printStackTrace();
         }
-
-
     }
-
-
 
 }

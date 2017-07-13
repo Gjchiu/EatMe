@@ -112,7 +112,7 @@ public class OrderFragment extends android.support.v4.app.Fragment{
                     "\n日期：" + sdf.format(order.getOrder_time()) +
                     "\n訂餐店家："+ order.getStore_name() +
                     "\n總金額："+ order.getTotalprice()+
-                    "              狀態："+order.getOrder_state());
+                    "\n狀態："+order.getOrder_state());
             holder.itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
