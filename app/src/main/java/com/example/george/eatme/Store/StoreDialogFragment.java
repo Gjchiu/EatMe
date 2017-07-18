@@ -1,6 +1,7 @@
 package com.example.george.eatme.Store;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -17,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.george.eatme.Product.ProductActivity;
 import com.example.george.eatme.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -33,13 +35,13 @@ import java.util.Map;
  */
 
 public class StoreDialogFragment extends DialogFragment {
+    private Store store;
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         //不顯示標題
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-
         return dialog;
     }
 
@@ -54,7 +56,7 @@ public class StoreDialogFragment extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Store store = (Store) getArguments().getSerializable("store");
+        final Store store = (Store) getArguments().getSerializable("store");
 
         ImageView ivstore = (ImageView) view.findViewById(R.id.ivalretstore);
         TextView tvstorename = (TextView)view.findViewById(R.id.tvstorename);
@@ -70,12 +72,16 @@ public class StoreDialogFragment extends DialogFragment {
         tvstoreout.setText(store.getStore_out());
         tvstorestar.setText("評價  " + store.getStore_star());
         tvstoreadd.setText("地址  " + store.getStore_addr());
-
         Button btntakeproduct = (Button) view.findViewById(R.id.btntakeproduct);
         btntakeproduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent();
+                Bundle bundle =new Bundle();
+                bundle.putSerializable("store",store);
+                intent.putExtras(bundle);
+                intent.setClass(getActivity(), ProductActivity.class);
+                startActivity(intent);
             }
         });
         Button btncancel = (Button) view.findViewById(R.id.btncancel);

@@ -1,4 +1,4 @@
-package com.example.george.eatme.Store;
+package com.example.george.eatme.Product;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -15,12 +15,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.george.eatme.Common;
-import com.example.george.eatme.Order.AlertDialogFragment;
 import com.example.george.eatme.R;
+import com.example.george.eatme.Store.Store;
+import com.example.george.eatme.Store.StoreDialogFragment;
+import com.example.george.eatme.Store.StoreGetTask;
 
 import java.util.List;
 
@@ -30,37 +33,35 @@ import static android.content.ContentValues.TAG;
  * Created by George on 2017/7/17.
  */
 
-public class StoreFragment extends Fragment {
-    private String storeclass,area;
-    private List<Store> storelist;
+public class ProductFragment extends Fragment {
+    private Store store;
+    private List<Product> productlist;
     private RecyclerView recyclerView;
-    public StoreFragment(String storeclass,String area) {
-        this.storeclass = storeclass;
-        this.area = area;
+    public ProductFragment(Store store) {
+        this.store = store;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_store, container, false);
+        View view = inflater.inflate(R.layout.fragment_product, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.storerecylerview);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
-        getarea();
-        getstorelist();
-        recyclerView.setAdapter(new StoreAdapter(getActivity(),storelist));
+        getproductlist();
+        recyclerView.setAdapter(new ProductAdapter(getActivity(),productlist));
         return view;
     }
 
-    private void getstorelist() {
+    private void getproductlist() {
         if (Common.networkConnected(getActivity())) {
-            String url = Common.URL + "StoreServlet";
+            String url = Common.URL + "ProductServlet";
 
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading...");
             progressDialog.show();
             try {
 
-                storelist = new StoreGetTask().execute(url,area,storeclass).get();
+                productlist = new ProductGetTask().execute(url,store.getStore_id()).get();
 
             } catch (Exception e) {
                 Log.e(TAG, e.toString());
@@ -71,64 +72,62 @@ public class StoreFragment extends Fragment {
             Common.showToast(getActivity(), R.string.msg_NoNetwork);
         }
     }
-    private void getarea(){
-        Intent intent = getActivity().getIntent();
-        area = intent.getStringExtra("area");
 
-    }
-
-    private class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder> {
+    private class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHolder> {
         private Context conotext;
-        private List<Store> storelist;
-        public StoreAdapter(Context context, List<Store> storelist) {
+        private List<Product> productlist;
+        public ProductAdapter(Context context, List<Product> productlist) {
             this.conotext = context;
-            this.storelist = storelist;
+            this.productlist = productlist;
         }
         class MyViewHolder extends RecyclerView.ViewHolder{
-            ImageView imageview;
-            TextView textview;
-
+            private ImageView imageview;
+            private TextView textview,amount;
+            private ImageButton add,minus;
             public MyViewHolder(View view){
                 super(view);
-                imageview = (ImageView) view.findViewById(R.id.ivstore);
-                textview = (TextView)view.findViewById(R.id.tvstore);
+                imageview = (ImageView) view.findViewById(R.id.ivproduct);
+                textview = (TextView)view.findViewById(R.id.tvproduct);
+                amount = (TextView)view.findViewById(R.id.tvamount);
+                add = (ImageButton) view.findViewById(R.id.btnadd);
+                minus = (ImageButton) view.findViewById(R.id.btnminus);
             }
         }
 
         @Override
-        public StoreAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ProductAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutinflater = LayoutInflater.from(conotext);
-            View view =layoutinflater.inflate(R.layout.view_item_store,parent,false);
+            View view =layoutinflater.inflate(R.layout.view_item_product,parent,false);
             return new MyViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(StoreAdapter.MyViewHolder holder, int position) {
-            final Store store = storelist.get(position);
-            if(store.getStore_image()!=null){
-                holder.imageview.setImageBitmap(Bytes2Bimap(store.getStore_image()));
+        public void onBindViewHolder(ProductAdapter.MyViewHolder holder, int position) {
+            final Product product = productlist.get(position);
+
+            if(product.getPro_image()!=null){
+                holder.imageview.setImageBitmap(Bytes2Bimap(product.getPro_image()));
             }
-
-            holder.textview.setText(store.getStore_name()+
-                                    "\n地址  " + store.getStore_addr()+
-                                    "\n評價  " + store.getStore_star());
-
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+            holder.textview.setText(product.getPc_name()
+                                    +" $ " + product.getPro_price().toString());
+            holder.amount.setText(amo);
+            holder.add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Bundle bundle =new Bundle();
-                    bundle.putSerializable("store",store);
-                    StoreDialogFragment storeDialogFragment = new StoreDialogFragment();
-                    storeDialogFragment.setArguments(bundle);
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    storeDialogFragment.show(fragmentManager,"alert");
+                    amo = amo +1;
+                }
+            });
+            holder.minus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
                 }
             });
         }
 
         @Override
         public int getItemCount() {
-            return storelist.size();
+            return productlist.size();
         }
         private Bitmap Bytes2Bimap(byte[] b){
             if(b.length!=0){

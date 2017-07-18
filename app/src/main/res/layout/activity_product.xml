@@ -25,9 +25,10 @@
                 android:textSize="24sp" />
         </FrameLayout>
     </android.support.v7.widget.Toolbar>
-    <android.support.v7.widget.RecyclerView
+    <FrameLayout
+        android:id="@+id/flproduct"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/body_color">
-    </android.support.v7.widget.RecyclerView>
+    </FrameLayout>
 </LinearLayout>
