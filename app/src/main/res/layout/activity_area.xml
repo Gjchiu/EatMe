@@ -27,22 +27,12 @@
                 android:textSize="24sp" />
         </FrameLayout>
     </android.support.v7.widget.Toolbar>
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:textSize="28dp"
-        android:gravity="center"
-        android:text="選擇地區"
-        android:layout_marginTop="3dp"
-        android:background="@color/body_color"/>
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/ordermal_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:background="@color/body_color">
-
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>

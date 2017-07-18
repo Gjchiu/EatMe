@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void covertArea(View view) {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, OrderMealActivity.class);
+        intent.setClass(MainActivity.this, AreaActivity.class);
         startActivity(intent);
     }
 

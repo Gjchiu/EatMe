@@ -5,21 +5,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.george.eatme.Area.AreaAdapter;
 import com.example.george.eatme.Area.AreaFragment;
 
 /**
  * Created by George on 2017/6/20.
  */
 
-public class OrderMealActivity extends AppCompatActivity {
+public class AreaActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ordermeal);
+        setContentView(R.layout.activity_area);
         setToolbar();
         switchFragment(new AreaFragment());
     }
@@ -27,7 +25,7 @@ public class OrderMealActivity extends AppCompatActivity {
     public void setToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.ordermeal_toolbar);
         TextView tvredermeal = (TextView)findViewById(R.id.tvordermealtitle);
-        tvredermeal.setText("點餐");
+        tvredermeal.setText("選擇地區");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

@@ -1,12 +1,13 @@
 package com.example.george.eatme.Order;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by George on 2017/6/21.
  */
 
-public class Store_Order {
+public class Store_Order implements Serializable{
     private String order_id;
     private Timestamp order_time;
     private String mem_id;
@@ -15,7 +16,6 @@ public class Store_Order {
     private Integer totalprice;
     private String order_way;
     private String receive_address;
-    private byte[] qrcode;
     private String order_note;
     private Timestamp order_taketime;
 
@@ -93,14 +93,6 @@ public class Store_Order {
 
     public void setReceive_address(String receive_address) {
         this.receive_address = receive_address;
-    }
-
-    public byte[] getQrcode() {
-        return qrcode;
-    }
-
-    public void setQrcode(byte[] qrcode) {
-        this.qrcode = qrcode;
     }
 
     public String getOrder_note() {

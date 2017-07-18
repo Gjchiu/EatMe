@@ -30,7 +30,7 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".OrderMealActivity"
+            android:name=".AreaActivity"
             android:parentActivityName="com.example.george.eatme.MainActivity"/>
         <activity
             android:name=".OrderActivity"
@@ -43,6 +43,9 @@
         <activity
             android:name=".TakeOrderActivity"
             android:parentActivityName="com.example.george.eatme.MainActivity"/>
+        <activity
+            android:name=".Store.StoreActivity"
+            android:parentActivityName="com.example.george.eatme.AreaActivity"/>
 
     </application>
 
