@@ -46,6 +46,10 @@
         <activity
             android:name=".Store.StoreActivity"
             android:parentActivityName="com.example.george.eatme.AreaActivity"/>
+        <activity
+            android:name=".Product.ProductActivity"
+            android:parentActivityName="com.example.george.eatme.Store.StoreActivity"/>
+        ProductActivity
 
     </application>
 

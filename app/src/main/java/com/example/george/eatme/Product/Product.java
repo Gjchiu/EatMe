@@ -18,6 +18,8 @@ public class Product implements Serializable {
     private Number quantity;
     private String pc_id;
     private String pc_name;
+    public Integer amount;
+
 
     public String getPro_id() {
         return pro_id;

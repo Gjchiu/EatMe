@@ -2,28 +2,28 @@ package com.example.george.eatme.Product;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.george.eatme.Common;
+import com.example.george.eatme.Order.Orderlist;
 import com.example.george.eatme.R;
 import com.example.george.eatme.Store.Store;
-import com.example.george.eatme.Store.StoreDialogFragment;
-import com.example.george.eatme.Store.StoreGetTask;
+
 
 import java.util.List;
 
@@ -37,6 +37,7 @@ public class ProductFragment extends Fragment {
     private Store store;
     private List<Product> productlist;
     private RecyclerView recyclerView;
+    public List<Orderlist> orderlists;
     public ProductFragment(Store store) {
         this.store = store;
     }
@@ -45,10 +46,17 @@ public class ProductFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_product, container, false);
-        recyclerView = (RecyclerView)view.findViewById(R.id.storerecylerview);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
+        recyclerView = (RecyclerView)view.findViewById(R.id.rvproduct);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         getproductlist();
         recyclerView.setAdapter(new ProductAdapter(getActivity(),productlist));
+        Button button =(Button)view.findViewById(R.id.btncheck);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchFragment();
+            }
+        });
         return view;
     }
 
@@ -71,6 +79,12 @@ public class ProductFragment extends Fragment {
         } else {
             Common.showToast(getActivity(), R.string.msg_NoNetwork);
         }
+    }
+    private void switchFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction =
+                getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.flproduct, fragment).addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     private class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHolder> {
@@ -102,33 +116,40 @@ public class ProductFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ProductAdapter.MyViewHolder holder, int position) {
+        public void onBindViewHolder(final ProductAdapter.MyViewHolder holder, int position) {
             final Product product = productlist.get(position);
-
+            product.amount = 0;
             if(product.getPro_image()!=null){
                 holder.imageview.setImageBitmap(Bytes2Bimap(product.getPro_image()));
             }
-            holder.textview.setText(product.getPc_name()
-                                    +" $ " + product.getPro_price().toString());
-            holder.amount.setText(amo);
+            holder.textview.setText(product.getPro_name()
+                                    +"  $ " + product.getPro_price().toString());
+            holder.amount.setText(product.amount.toString());
             holder.add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    amo = amo +1;
+                    product.amount++;
+                    holder.amount.setText(product.amount.toString());
                 }
             });
             holder.minus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    product.amount--;
+                    if(product.amount<0)
+                        product.amount=0;
+                    holder.amount.setText(product.amount.toString());
                 }
             });
+
+
         }
 
         @Override
         public int getItemCount() {
             return productlist.size();
         }
+
         private Bitmap Bytes2Bimap(byte[] b){
             if(b.length!=0){
                 return BitmapFactory.decodeByteArray(b, 0, b.length);

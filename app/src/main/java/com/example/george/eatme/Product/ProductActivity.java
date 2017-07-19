@@ -35,7 +35,7 @@ public class ProductActivity extends AppCompatActivity {
     private void switchFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.flproduct, fragment);
+        fragmentTransaction.replace(R.id.flproduct, fragment).addToBackStack(null);
         fragmentTransaction.commit();
     }
 

@@ -30,10 +30,11 @@ class ProductGetTask extends AsyncTask<Object, Integer, List<Product>> {
     @Override
     protected List<Product> doInBackground(Object... params) {
         String url = params[0].toString();
-        String area = params[1].toString();
+        String storeid = params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
+        jsonObject.addProperty("storeid", storeid);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {
@@ -42,7 +43,7 @@ class ProductGetTask extends AsyncTask<Object, Integer, List<Product>> {
         }
 
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Store>>() {}.getType();
+        Type listType = new TypeToken<List<Product>>() {}.getType();
         return gson.fromJson(jsonIn, listType);
     }
 
