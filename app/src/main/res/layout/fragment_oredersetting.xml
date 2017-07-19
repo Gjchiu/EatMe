@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_color"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="499dp"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tvget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="取餐方式"
+                android:textSize="24dp"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="59dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.73"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+            <!--android:visibility="invisible">-->
+            <TextView
+                android:id="@+id/tvtime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:text="取餐時間"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvshowtine"
+                android:layout_width="163dp"
+                android:layout_height="match_parent"
+
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+            <ImageButton
+                android:id="@+id/btnpicktime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:src="@drawable/calendar"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tvaddress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="外送地址"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/etadd"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnset"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="#AF2323"
+        android:text="確認訂餐"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+
+</LinearLayout>

@@ -25,6 +25,8 @@ import com.example.george.eatme.R;
 import com.example.george.eatme.Store.Store;
 
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
@@ -46,6 +48,7 @@ public class ProductFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_product, container, false);
+        orderlists = new ArrayList<Orderlist>();
         recyclerView = (RecyclerView)view.findViewById(R.id.rvproduct);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         getproductlist();
@@ -54,7 +57,23 @@ public class ProductFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switchFragment();
+//                switchFragment();
+                for(Product product:productlist){
+                    if(product.amount>0){
+                        Orderlist orderlist = new Orderlist();
+                        orderlist.setPro_id(product.getPro_id());
+                        orderlist.setOrder_amount(product.amount);
+                        orderlist.setPrice(product.getPro_price().intValue());
+                        orderlist.setPro_name(product.getPro_name());
+                        orderlists.add(orderlist);
+                    }
+                }
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("orderlists", (Serializable) orderlists);
+                bundle.putSerializable("store",store);
+                OrderSettingFragment orderSettingFragment = new OrderSettingFragment();
+                orderSettingFragment.setArguments(bundle);
+                switchFragment(orderSettingFragment);
             }
         });
         return view;

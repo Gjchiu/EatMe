@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 
 public class Store_Order implements Serializable{
     private String order_id;
-    private Timestamp order_time;
+    private String order_time;
     private String mem_id;
     private String store_id;
     private String order_state;
@@ -17,7 +17,7 @@ public class Store_Order implements Serializable{
     private String order_way;
     private String receive_address;
     private String order_note;
-    private Timestamp order_taketime;
+    private String order_taketime;
 
     public String getStore_name() {
         return store_name;
@@ -37,11 +37,11 @@ public class Store_Order implements Serializable{
         this.order_id = order_id;
     }
 
-    public Timestamp getOrder_time() {
+    public String getOrder_time() {
         return order_time;
     }
 
-    public void setOrder_time(Timestamp order_time) {
+    public void setOrder_time(String order_time) {
         this.order_time = order_time;
     }
 
@@ -103,11 +103,11 @@ public class Store_Order implements Serializable{
         this.order_note = order_note;
     }
 
-    public Timestamp getOrder_taketime() {
+    public String getOrder_taketime() {
         return order_taketime;
     }
 
-    public void setOrder_taketime(Timestamp order_taketime) {
+    public void setOrder_taketime(String order_taketime) {
         this.order_taketime = order_taketime;
     }
 

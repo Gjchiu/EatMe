@@ -43,6 +43,7 @@
         android:gravity="center"
         android:scaleType="center"
         android:unselectedAlpha="1"></android.support.v4.view.ViewPager>
+
     <com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/indicator"
         android:layout_width = "fill_parent"
@@ -82,15 +83,6 @@
                 android:onClick="coverMember"
                 app:srcCompat="@drawable/member" />
 
-            <ImageButton
-                android:id="@+id/btntakemeal"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#E6CDA0"
-                android:layout_marginRight="10dp"
-                android:onClick="coverttakeorfer"
-                app:srcCompat="@drawable/take" />
-
         </TableRow>
 
         <TableRow
@@ -108,20 +100,13 @@
                 app:srcCompat="@drawable/order" />
 
             <ImageButton
-                android:id="@+id/btnnews"
+                android:id="@+id/btntakemeal"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="#E6CDA0"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/message" />
-
-            <ImageButton
-                android:id="@+id/btnscan"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#E6CDA0"
-                android:visibility="invisible"
-                android:layout_marginRight="10dp" />
+                android:onClick="coverttakeorfer"
+                app:srcCompat="@drawable/take" />
 
         </TableRow>
 
