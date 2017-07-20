@@ -3,6 +3,8 @@ package com.example.george.eatme.Product;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.george.eatme.Order.Orderlist;
+import com.example.george.eatme.Order.Store_Order;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -29,8 +31,8 @@ class OrderInsertTask extends AsyncTask<Object, Integer, Boolean> {
     @Override
     protected Boolean doInBackground(Object... params) {
         String url = params[0].toString();
-        String order = params[1].toString();
-        String orderlist = params[2].toString();
+        Store_Order order = (Store_Order) params[1];
+        List<Orderlist> orderlist = (List<Orderlist>) params[2];
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
 

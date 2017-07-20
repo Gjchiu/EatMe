@@ -16,7 +16,9 @@ import android.widget.Toast;
 import com.example.george.eatme.Common;
 import com.example.george.eatme.R;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -42,7 +44,7 @@ public class OrderFragment extends android.support.v4.app.Fragment{
     public void onStart() {
         super.onStart();
             if (Common.networkConnected(getActivity())) {
-                String url = Common.URL + "Store_OrderServlet1";
+                String url = Common.URL + "Store_OrderServlet";
                 List<Store_Order> orderList = null;
 
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
@@ -108,8 +110,9 @@ public class OrderFragment extends android.support.v4.app.Fragment{
             Store_Order order = orderList.get(position);
             String title = order.getOrder_id();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+
             holder.tvOrderTitle.setText("訂單編號：" + title +
-                    "\n日期：" + sdf.format(order.getOrder_time()) +
+                    "\n日期：" + order.getOrder_time() +
                     "\n訂餐店家："+ order.getStore_name() +
                     "\n總金額："+ order.getTotalprice()+
                     "\n狀態："+order.getOrder_state());

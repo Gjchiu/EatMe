@@ -34,6 +34,7 @@ import com.example.george.eatme.Order.Orderlist;
 import com.example.george.eatme.Order.Store_Order;
 import com.example.george.eatme.R;
 import com.example.george.eatme.Store.Store;
+import com.example.george.eatme.Store.StoreActivity;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -109,7 +110,7 @@ public class OrderSettingFragment extends Fragment{
         btnpicktime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mYear==0) {
+                if(mYear == 0) {
                     final Calendar c = Calendar.getInstance();
                     mYear = c.get(Calendar.YEAR);
                     mMonth = c.get(Calendar.MONTH);
@@ -144,12 +145,17 @@ public class OrderSettingFragment extends Fragment{
         btnset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                order.setOrder_time(tvshowtine.getText().toString());
+//                order.setOrder_time(tvshowtine.getText().toString());
+                if( Timestamp.valueOf(tvshowtine.getText().toString()+":00").getTime() < Calendar.getInstance().getTimeInMillis()) {
+
+                    Toast.makeText(getActivity(),"請選擇正確日期",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 order.setReceive_address(editText.getText().toString());
-                order.setOrder_taketime(tvshowtine.getText().toString());
+                order.setOrder_taketime(tvshowtine.getText().toString()+":00");
                 order.setTotalprice(total);
-                Boolean bool = false;
-                getresult(bool,order);
+                Boolean bool = getresult(order);
                 if(bool == true){
                     setalertdialog();
                 }else{
@@ -187,15 +193,16 @@ public class OrderSettingFragment extends Fragment{
                 new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialoginterface, int i){
                         getActivity().finish();
+
                     }
                 });
         dialog.show();
     }
 
-    private void getresult(Boolean bool,Store_Order order) {
+    private Boolean getresult(Store_Order order) {
+        Boolean bool = false;
         if (Common.networkConnected(getActivity())) {
-            String url = Common.URL + "Store_OrderServlet1";
-
+            String url = Common.URL + "Store_OrderServlet";
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading...");
             progressDialog.show();
@@ -211,5 +218,6 @@ public class OrderSettingFragment extends Fragment{
         } else {
             Common.showToast(getActivity(), R.string.msg_NoNetwork);
         }
+        return bool;
     }
 }
