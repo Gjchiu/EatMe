@@ -66,7 +66,7 @@ public class TakeOrderActivity extends AppCompatActivity {
 
     public void getorders(){
         if (Common.networkConnected(this)) {
-            String url = Common.URL + "Store_OrderServlet1";
+            String url = Common.URL + "Store_OrderServlet";
             List<Store_Order> orderList = null;
 
             ProgressDialog progressDialog = new ProgressDialog(this);
@@ -136,7 +136,7 @@ public class TakeOrderActivity extends AppCompatActivity {
             String title = order.getOrder_id();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
             holder.tvtakeorderTitle.setText("訂單編號：" + title +
-                    "\n日期：" + sdf.format(order.getOrder_time()) +
+                    "\n日期：" + order.getOrder_time() +
                     "\n訂餐店家："+ order.getStore_name() +
                     "\n總金額："+ order.getTotalprice()+
                     "\n狀態："+order.getOrder_state());

@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         removePreferences();
                         Intent intent = new Intent();
-                        intent.setClass(getApplicationContext(),LoginActivty.class);
+                        intent.setClass(getApplicationContext(),Login2Activity.class);
                         startActivity(intent);
                         finish();
                     }
@@ -153,8 +153,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences
                 =getSharedPreferences("Login",MODE_PRIVATE);
         SharedPreferences.Editor preferencesEditor = preferences.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(member);
         preferencesEditor.clear();
         preferencesEditor.commit();
 

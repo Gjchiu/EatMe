@@ -68,6 +68,7 @@ public class OrderSettingFragment extends Fragment{
         for(Orderlist orderlist:orderlists){
             total = orderlist.getPrice() * orderlist.getOrder_amount();
         }
+        Log.d("total", String.valueOf(total));
 
         store = (Store)getArguments().getSerializable("store");
         final Store_Order order =new Store_Order();

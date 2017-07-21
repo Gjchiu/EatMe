@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainbody"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4D7"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.example.george.eatme.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/storemain_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#AF2323"
+        android:minHeight="?actionBarSize"
+        app:titleTextAppearance="@style/toolbar_style"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="252dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="          吃訂我 訂餐"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_name"
+            android:background="@color/toolbar_color"
+            android:onClick="logout"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="492dp"
+        android:layout_weight="1.10"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btScan"
+            android:layout_width="247dp"
+            android:layout_height="200dp"
+            android:text="QR CODE 掃描"
+            android:layout_margin="50dp"
+            android:background="@color/white"
+            android:textColor="#AF2323"
+            android:layout_weight="0.18" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_weight="0.57"
+        android:background="#AF2323"
+        android:gravity="center">
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -27,6 +27,15 @@ public class Store implements Serializable {
     private String store_out;
     private String store_zone;
     private String sc_name;
+    private Boolean autologin;
+
+    public Boolean getAutologin() {
+        return autologin;
+    }
+
+    public void setAutologin(Boolean autologin) {
+        this.autologin = autologin;
+    }
 
     public String getStore_id() {
         return store_id;
