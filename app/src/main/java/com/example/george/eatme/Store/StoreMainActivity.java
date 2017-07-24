@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +18,7 @@ import com.example.george.eatme.Common;
 import com.example.george.eatme.Login2Activity;
 import com.example.george.eatme.Order.OrderUpdateTask;
 
+import com.example.george.eatme.OrderActivity;
 import com.example.george.eatme.R;
 import com.google.gson.Gson;
 
@@ -27,7 +27,7 @@ import static android.content.ContentValues.TAG;
 public class StoreMainActivity extends AppCompatActivity {
     private static final String PACKAGE = "com.google.zxing.client.android";
     private static final int REQUEST_BARCODE_SCAN = 0;
-    private Button btScan;
+    private Button btnScan,btnorder;
     private Store sotre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,9 @@ public class StoreMainActivity extends AppCompatActivity {
     }
 
     private void findViews() {
-        btScan = (Button) findViewById(R.id.btScan);
-        btScan.setOnClickListener(new OnClickListener() {
+        btnScan = (Button) findViewById(R.id.btnScan);
+
+        btnScan.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
                 Intent intent = new Intent(
@@ -55,6 +56,19 @@ public class StoreMainActivity extends AppCompatActivity {
                 }
             }
 
+        });
+
+        btnorder = (Button) findViewById(R.id.btnorder);
+        btnorder.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent();
+                bundle.putSerializable("sotre",sotre);
+                intent.putExtras(bundle);
+                intent.setClass(StoreMainActivity.this, OrderActivity.class);
+                startActivity(intent);
+            }
         });
     }
 

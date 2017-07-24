@@ -2,6 +2,7 @@ package com.example.george.eatme.Order;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,12 +15,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.george.eatme.Common;
+import com.example.george.eatme.Member.Member;
 import com.example.george.eatme.R;
+import com.example.george.eatme.Store.Store;
+import com.google.gson.Gson;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.example.george.eatme.R.drawable.member;
 
 
 /**
@@ -29,14 +36,16 @@ import java.util.List;
 public class OrderFragment extends android.support.v4.app.Fragment{
     private final static String TAG = "OrderFragment";
     private RecyclerView rvOrder;
-    Bundle bundle;
+    private Member member;
+    private Store store;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+        loadPreferences();
         rvOrder = (RecyclerView) view.findViewById(R.id.rvOrders);
         rvOrder.setLayoutManager(new LinearLayoutManager(getActivity()));
-        bundle =  getArguments();
         return view;
     }
 
@@ -46,18 +55,17 @@ public class OrderFragment extends android.support.v4.app.Fragment{
             if (Common.networkConnected(getActivity())) {
                 String url = Common.URL + "Store_OrderServlet";
                 List<Store_Order> orderList = null;
-
+                String state = getArguments().getString("state");
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading...");
             progressDialog.show();
             try {
-                Log.d("BBB",bundle.getString("memid"));
-                if(bundle.getString("action").equals("getAll"))
-                    orderList = new OrderGetAllTask().execute(url,bundle.getString("memid")).get();
-                if(bundle.getString("action").equals("getByState"))
-                    orderList = new OrderGetByStateTask().execute(url,bundle.getString("memid")).get();
-                if(bundle.getString("action").equals("getBycomState"))
-                    orderList = new OrderGetBycomStateTask().execute(url,bundle.getString("memid")).get();
+                    if(member == null){
+                        orderList = new StoreOrderGetByStateTask().execute(url,store.getStore_id(),state).get();
+                    }else{
+                        orderList = new OrderGetByStateTask().execute(url,member.getMem_id(),state).get();
+                    }
+
 
             } catch (Exception e) {
                 Log.e(TAG, e.toString());
@@ -72,6 +80,17 @@ public class OrderFragment extends android.support.v4.app.Fragment{
 
         } else {
             Common.showToast(getActivity(), R.string.msg_NoNetwork);
+        }
+    }
+    private void loadPreferences() {
+        SharedPreferences preferences
+                = getActivity().getSharedPreferences("Login",MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = preferences.getString("member", "");
+        member = gson.fromJson(json, Member.class);
+        if(member == null){
+            json = preferences.getString("store", "");
+            store = gson.fromJson(json, Store.class);
         }
     }
 
@@ -116,12 +135,12 @@ public class OrderFragment extends android.support.v4.app.Fragment{
                     "\n訂餐店家："+ order.getStore_name() +
                     "\n總金額："+ order.getTotalprice()+
                     "\n狀態："+order.getOrder_state());
-            holder.itemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context,"123",Toast.LENGTH_SHORT).show();
-                }
-            });
+//            holder.itemView.setOnClickListener(new View.OnClickListener(){
+//                @Override
+//                public void onClick(View view) {
+//                    Toast.makeText(context,"123",Toast.LENGTH_SHORT).show();
+//                }
+//            });
 
 //        holder.tvOrderDetail.setText(order.getTotalprice().toString());
 //        holder.tvOrderDetail.setVisibility(

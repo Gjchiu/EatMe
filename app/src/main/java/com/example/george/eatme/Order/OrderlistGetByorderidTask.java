@@ -3,9 +3,7 @@ package com.example.george.eatme.Order;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.george.eatme.MainActivity;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
@@ -19,25 +17,22 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-
 /**
- * Created by George on 2017/6/22.
+ * Created by Java on 2017/7/25.
  */
 
-class OrderGetByStateTask extends AsyncTask<Object, Integer, List<Store_Order>> {
-    private final static String TAG = "OrderGetByStateTask";
-    private final static String ACTION = "getByState";
+class OrderlistGetByorderidTask  extends AsyncTask<Object, Integer, List<Orderlist>> {
+    private final static String TAG = "OrderlistGetByorderidTask";
+    private final static String ACTION = "getdetail";
 
     @Override
-    protected List<Store_Order> doInBackground(Object... params) {
+    protected  List<Orderlist> doInBackground(Object... params) {
         String url = params[0].toString();
-        String memid = params[1].toString();
-        String state = params[2].toString();
+        String orderid =params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
-        jsonObject.addProperty("memid", memid);
-        jsonObject.addProperty("state", state);
+        jsonObject.addProperty("orderid", orderid);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {
@@ -46,7 +41,7 @@ class OrderGetByStateTask extends AsyncTask<Object, Integer, List<Store_Order>> 
         }
 
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Store_Order>>() {}.getType();
+        Type listType = new TypeToken< List<Orderlist>>() {}.getType();
         return gson.fromJson(jsonIn, listType);
     }
 

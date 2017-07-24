@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:padding="20dp">
+
+    <ListView
+        android:id="@+id/lvorderlist"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_weight="0.00"
+        android:layout_marginBottom="10dp"></ListView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="right">
+        <TextView
+            android:id="@+id/tvtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="總金額"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="24dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvtakeway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取餐方式"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="24dp"/>
+        <TextView
+            android:id="@+id/tvtaketime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取餐時間"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="24dp"/>
+        <TextView
+            android:id="@+id/tvaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="送餐地址"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0.07">
+
+        <Button
+            android:id="@+id/btnupdate"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:background="#AF2323"
+            android:text="取餐確認"
+            android:layout_marginRight="60dp"
+            android:textSize="20dp"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:background="#AF2323"
+            android:text="@string/cancel"
+            android:textSize="20dp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

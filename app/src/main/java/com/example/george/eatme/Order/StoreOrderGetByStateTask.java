@@ -3,9 +3,7 @@ package com.example.george.eatme.Order;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.george.eatme.MainActivity;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,18 +22,20 @@ import java.util.List;
  * Created by George on 2017/6/22.
  */
 
-class OrderGetBycomStateTask extends AsyncTask<Object, Integer, List<Store_Order>> {
-    private final static String TAG = "OrderGetBycomStateTask";
-    private final static String ACTION = "getBycomState";
+class StoreOrderGetByStateTask extends AsyncTask<Object, Integer, List<Store_Order>> {
+    private final static String TAG = "OrderGetByStateTask";
+    private final static String ACTION = "storegetByState";
 
     @Override
     protected List<Store_Order> doInBackground(Object... params) {
         String url = params[0].toString();
-        String memid =params[1].toString();
+        String storeid = params[1].toString();
+        String state = params[2].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
-        jsonObject.addProperty("memid", memid);
+        jsonObject.addProperty("storeid", storeid);
+        jsonObject.addProperty("state", state);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {

@@ -44,7 +44,7 @@ public class AlertDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //載入xml layout
-        View view = inflater.inflate(R.layout.alertdialog_qrcode, null);
+        View view = inflater.inflate(R.layout.dialog_qrcode, null);
         return view;
     }
 

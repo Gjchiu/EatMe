@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="20dp"/>
+            android:textSize="24dp"/>
         <TextView
             android:id="@+id/tvstorephone"
             android:layout_width="wrap_content"
@@ -44,12 +44,12 @@
             android:id="@+id/tvstorestar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"/>
+            android:textSize="24dp"/>
         <TextView
             android:id="@+id/tvstoreadd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"/>
+            android:textSize="24dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
             android:background="#AF2323"
             android:text="@string/ordermeal"
             android:layout_marginRight="4dp"
-            android:textSize="16dp"
+            android:textSize="20dp"
             android:textColor="@color/white" />
 
         <Button
@@ -76,7 +76,7 @@
             android:layout_marginTop="20dip"
             android:background="#AF2323"
             android:text="@string/cancel"
-            android:textSize="16dp"
+            android:textSize="20dp"
             android:textColor="@color/white" />
     </LinearLayout>
 

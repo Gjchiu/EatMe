@@ -24,20 +24,18 @@ import java.util.List;
  * Created by George on 2017/6/22.
  */
 
-class OrderGetByStateTask extends AsyncTask<Object, Integer, List<Store_Order>> {
-    private final static String TAG = "OrderGetByStateTask";
-    private final static String ACTION = "getByState";
+class OrderGetByorderidTask extends AsyncTask<Object, Integer, Store_Order> {
+    private final static String TAG = "OrderGetByorderidTask";
+    private final static String ACTION = "getByorderid";
 
     @Override
-    protected List<Store_Order> doInBackground(Object... params) {
+    protected Store_Order doInBackground(Object... params) {
         String url = params[0].toString();
-        String memid = params[1].toString();
-        String state = params[2].toString();
+        String orderid =params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
-        jsonObject.addProperty("memid", memid);
-        jsonObject.addProperty("state", state);
+        jsonObject.addProperty("orderid", orderid);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {
@@ -46,7 +44,7 @@ class OrderGetByStateTask extends AsyncTask<Object, Integer, List<Store_Order>> 
         }
 
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Store_Order>>() {}.getType();
+        Type listType = new TypeToken<Store_Order>() {}.getType();
         return gson.fromJson(jsonIn, listType);
     }
 

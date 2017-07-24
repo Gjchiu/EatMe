@@ -74,13 +74,13 @@ public class StoreLoginFragment extends Fragment {
                 if(store!=null){
                     if(checkBox.isChecked()){
                         store.setAutologin(true);
-                        preferences =getActivity().getSharedPreferences(PREFERENCES_NAME,MODE_PRIVATE);
-                        SharedPreferences.Editor preferencesEditor = preferences.edit();
-                        Gson gson = new Gson();
-                        String json = gson.toJson(store);
-                        preferencesEditor.putString("store", json);
-                        preferencesEditor.commit();
                     }
+                    preferences =getActivity().getSharedPreferences(PREFERENCES_NAME,MODE_PRIVATE);
+                    SharedPreferences.Editor preferencesEditor = preferences.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(store);
+                    preferencesEditor.putString("store", json);
+                    preferencesEditor.commit();
                     Intent intent = new Intent();
                     intent.setClass(getActivity(),StoreMainActivity.class);
                     startActivity(intent);

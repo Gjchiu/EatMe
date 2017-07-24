@@ -89,19 +89,29 @@ public class MemberLoginFragment extends Fragment {
                 if(member!=null){
                     if(checkBox.isChecked()){
                         member.setAutoLogin(true);
-                        preferences =getActivity().getSharedPreferences(PREFERENCES_NAME,MODE_PRIVATE);
-                        SharedPreferences.Editor preferencesEditor = preferences.edit();
-                        Gson gson = new Gson();
-                        String json = gson.toJson(member);
-                        preferencesEditor.putString("member", json);
-                        preferencesEditor.commit();
                     }
-                    Intent intent = new Intent();
-                    intent.setClass(getActivity(),MainActivity.class);
-                    startActivity(intent);
-                    String welcome = "歡迎 " + member.getMem_name();
-                    Toast.makeText(getActivity(),welcome,Toast.LENGTH_LONG).show();
-                    getActivity().finish();
+                    preferences =getActivity().getSharedPreferences(PREFERENCES_NAME,MODE_PRIVATE);
+                    SharedPreferences.Editor preferencesEditor = preferences.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(member);
+                    preferencesEditor.putString("member", json);
+                    preferencesEditor.commit();
+                    if(member.getMem_state().equals("未認證")){
+                        Toast.makeText(getActivity(),"請先完成認證",Toast.LENGTH_LONG).show();
+
+                    }else if(member.getMem_state().equals("停權中")){
+                        Toast.makeText(getActivity(),"此會員已被停權",Toast.LENGTH_LONG).show();
+
+                    }
+                    else{
+                        Intent intent = new Intent();
+                        intent.setClass(getActivity(),MainActivity.class);
+                        startActivity(intent);
+                        String welcome = "歡迎 " + member.getMem_name();
+                        Toast.makeText(getActivity(),welcome,Toast.LENGTH_LONG).show();
+                        getActivity().finish();
+                    }
+
                 }
             } catch (Exception e) {
                 Log.e(TAG, e.toString());

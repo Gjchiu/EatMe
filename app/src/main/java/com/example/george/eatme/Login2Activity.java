@@ -44,8 +44,8 @@ public class Login2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
-        setFragmentTabHost();
         checkisAutoLogin();
+        setFragmentTabHost();
     }
 
     public void setFragmentTabHost() {

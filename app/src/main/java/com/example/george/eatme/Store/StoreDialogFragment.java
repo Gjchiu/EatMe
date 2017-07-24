@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,21 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.george.eatme.Product.ProductActivity;
 import com.example.george.eatme.R;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-
-import java.util.EnumMap;
-import java.util.Map;
 
 /**
  * Created by Java on 2017/7/13.
@@ -49,7 +38,7 @@ public class StoreDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //載入xml layout
-        View view = inflater.inflate(R.layout.alertdialog_store, null);
+        View view = inflater.inflate(R.layout.dialog_store, null);
         return view;
     }
 
@@ -70,7 +59,7 @@ public class StoreDialogFragment extends DialogFragment {
         tvstorename.setText(store.getStore_name());
         tvstorephone.setText("電話  "+store.getStore_phone());
         tvstoreout.setText(store.getStore_out());
-        tvstorestar.setText("評價  " + store.getStore_star());
+        tvstorestar.setText("評價  " + store.getStore_star()/store.getStore_count());
         tvstoreadd.setText("地址  " + store.getStore_addr());
         Button btntakeproduct = (Button) view.findViewById(R.id.btntakeproduct);
         btntakeproduct.setOnClickListener(new View.OnClickListener() {

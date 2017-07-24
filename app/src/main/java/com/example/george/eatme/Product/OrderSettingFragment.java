@@ -59,16 +59,13 @@ public class OrderSettingFragment extends Fragment{
     private String time;
     private Member member;
     public List<Orderlist> orderlists;
-    private int total;
+    private int total=0;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_oredersetting, container, false);
         orderlists = (List<Orderlist>) getArguments().getSerializable("orderlists");
-        for(Orderlist orderlist:orderlists){
-            total = orderlist.getPrice() * orderlist.getOrder_amount();
-        }
-        Log.d("total", String.valueOf(total));
+
 
         store = (Store)getArguments().getSerializable("store");
         final Store_Order order =new Store_Order();
@@ -152,6 +149,11 @@ public class OrderSettingFragment extends Fragment{
                     Toast.makeText(getActivity(),"請選擇正確日期",Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                for(Orderlist orderlist:orderlists){
+                    total = orderlist.getPrice() * orderlist.getOrder_amount() +  total;
+                }
+                Log.d("total", String.valueOf(total));
 
                 order.setReceive_address(editText.getText().toString());
                 order.setOrder_taketime(tvshowtine.getText().toString()+":00");

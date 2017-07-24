@@ -22,13 +22,11 @@ import com.example.george.eatme.Order.OrderFragment;
 import com.google.gson.Gson;
 
 public class OrderActivity extends AppCompatActivity {
-    Bundle bundle1,bundle2,bundle3;
-    Member member;
+    Bundle bundle1,bundle2,bundle3,bundle4;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        loadPreferences();
         newbundle();
         setToolbar();
         setFragmentTabHost();
@@ -58,18 +56,23 @@ public class OrderActivity extends AppCompatActivity {
         //並設定Tab上顯示的文字為第一堂課與icon圖片，Tab連結切換至
         //LessonOneFragment class，無夾帶Bundle資訊。
         mTabHost.addTab(mTabHost.newTabSpec("one")
-                        .setIndicator("全部訂單")
+                        .setIndicator("未確認")
                 ,OrderFragment.class, bundle1);
 
         //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("two")
-                        .setIndicator("未完成")
+                        .setIndicator("已確認")
                 ,OrderFragment.class,bundle2);
 
         //同上方Tab設定，不同處為帶入參數的差異
         mTabHost.addTab(mTabHost.newTabSpec("three")
-                        .setIndicator("已取餐")
+                        .setIndicator("待取餐")
                 ,OrderFragment.class, bundle3);
+
+        mTabHost.addTab(mTabHost.newTabSpec("four")
+                        .setIndicator("已取餐")
+                ,OrderFragment.class, bundle4);
+
     }
     public void setToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.order_toolbar);
@@ -79,22 +82,13 @@ public class OrderActivity extends AppCompatActivity {
 
     public void newbundle(){
         bundle1 = new Bundle();
-        bundle1.putString("action","getAll");
-        bundle1.putString("memid",member.getMem_id());
+        bundle1.putString("state","未確認");
         bundle2 = new Bundle();
-        bundle2.putString("action","getByState");
-        bundle2.putString("memid",member.getMem_id());
+        bundle2.putString("state","已確認");
         bundle3 = new Bundle();
-        bundle3.putString("action","getBycomState");
-        bundle3.putString("memid",member.getMem_id());
+        bundle3.putString("state","待取餐");
+        bundle4 = new Bundle();
+        bundle4.putString("state","已取餐");
     }
 
-    private void loadPreferences() {
-        SharedPreferences preferences
-                = getSharedPreferences("Login",MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = preferences.getString("member", "");
-        member = gson.fromJson(json, Member.class);
-        Log.d("member",member.getMem_id());
-    }
 }
