@@ -1,8 +1,9 @@
-package com.example.george.eatme.Order;
+package com.example.george.eatme.Ad;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.george.eatme.Store.StoreClass;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
@@ -17,22 +18,21 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+
 /**
- * Created by Java on 2017/7/25.
+ * Created by George on 2017/6/22.
  */
 
-public class OrderlistGetByorderidTask  extends AsyncTask<Object, Integer, List<Orderlist>> {
-    private final static String TAG = "OrderlistGetByorderidTask";
-    private final static String ACTION = "getdetail";
+public class AdGetAllTask extends AsyncTask<Object, Integer, List<Ad>> {
+    private final static String TAG = "AdGetAllTask";
+    private final static String ACTION = "getAll";
 
     @Override
-    protected  List<Orderlist> doInBackground(Object... params) {
+    protected List<Ad> doInBackground(Object... params) {
         String url = params[0].toString();
-        String orderid =params[1].toString();
         String jsonIn;
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("action", ACTION);
-        jsonObject.addProperty("orderid", orderid);
         try {
             jsonIn = getRemoteData(url, jsonObject.toString());
         } catch (IOException e) {
@@ -41,7 +41,7 @@ public class OrderlistGetByorderidTask  extends AsyncTask<Object, Integer, List<
         }
 
         Gson gson = new Gson();
-        Type listType = new TypeToken< List<Orderlist>>() {}.getType();
+        Type listType = new TypeToken<List<Ad>>() {}.getType();
         return gson.fromJson(jsonIn, listType);
     }
 

@@ -24,7 +24,7 @@ import java.util.List;
  * Created by George on 2017/6/22.
  */
 
-class OrderGetByorderidTask extends AsyncTask<Object, Integer, Store_Order> {
+public class OrderGetByorderidTask extends AsyncTask<Object, Integer, Store_Order> {
     private final static String TAG = "OrderGetByorderidTask";
     private final static String ACTION = "getByorderid";
 

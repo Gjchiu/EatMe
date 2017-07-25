@@ -1,6 +1,7 @@
 package com.example.george.eatme.Store;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -16,11 +17,19 @@ import android.widget.Button;
 
 import com.example.george.eatme.Common;
 import com.example.george.eatme.Login2Activity;
+import com.example.george.eatme.Order.OrderGetByorderidTask;
 import com.example.george.eatme.Order.OrderUpdateTask;
 
+import com.example.george.eatme.Order.Orderlist;
+import com.example.george.eatme.Order.OrderlistDialogFragment;
+import com.example.george.eatme.Order.OrderlistGetByorderidTask;
+import com.example.george.eatme.Order.Store_Order;
 import com.example.george.eatme.OrderActivity;
 import com.example.george.eatme.R;
 import com.google.gson.Gson;
+
+import java.io.Serializable;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -29,6 +38,8 @@ public class StoreMainActivity extends AppCompatActivity {
     private static final int REQUEST_BARCODE_SCAN = 0;
     private Button btnScan,btnorder;
     private Store sotre;
+    private Store_Order order;
+    private List<Orderlist> orderlists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +94,17 @@ public class StoreMainActivity extends AppCompatActivity {
             } else if (resultCode == RESULT_CANCELED) {
                 message = "Scan was Cancelled!";
             }
+            getorder(contents);
+            getorderlist(contents);
+            Bundle bundle = new Bundle();
+            bundle.putString("orderid",contents);
+            bundle.putSerializable("order",order);
+            bundle.putSerializable("orderlists", (Serializable) orderlists);
+            OrderlistDialogFragment orderlistDialogFragment = new OrderlistDialogFragment();
+            orderlistDialogFragment.setArguments(bundle);
+            android.support.v4.app.FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+            trans.add(orderlistDialogFragment, "orderlistDialogFragment");
+            trans.commitAllowingStateLoss();
             Boolean bool = getresult(contents);
             if(bool==true){
                 DialogEvent();
@@ -191,5 +213,39 @@ public class StoreMainActivity extends AppCompatActivity {
                     }
                 });
         dialog.show();
+    }
+    private void getorderlist(String orderid) {
+        if (Common.networkConnected(this)) {
+            String url = Common.URL + "OrderListServlet";
+            ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
+            try {
+                orderlists = new OrderlistGetByorderidTask().execute(url,orderid).get();
+            } catch (Exception e) {
+                Log.e(TAG, e.toString());
+            }
+            progressDialog.cancel();
+
+        } else {
+            Common.showToast(this, R.string.msg_NoNetwork);
+        }
+    }
+    private void getorder(String orderid){
+        if (Common.networkConnected(this)) {
+            String url = Common.URL + "Store_OrderServlet";
+            ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
+            try {
+                order = new OrderGetByorderidTask().execute(url,orderid).get();
+            } catch (Exception e) {
+                Log.e(TAG, e.toString());
+            }
+            progressDialog.cancel();
+
+        } else {
+            Common.showToast(this, R.string.msg_NoNetwork);
+        }
     }
 }

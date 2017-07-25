@@ -9,8 +9,7 @@
     <ListView
         android:id="@+id/lvorderlist"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_weight="0.00"
+        android:layout_height="121dp"
         android:layout_marginBottom="10dp"></ListView>
 
     <LinearLayout
@@ -65,7 +64,7 @@
         android:layout_weight="0.07">
 
         <Button
-            android:id="@+id/btnupdate"
+            android:id="@+id/btn2"
             android:layout_width="123dp"
             android:layout_height="wrap_content"
             android:background="#AF2323"
@@ -74,13 +73,5 @@
             android:textSize="20dp"
             android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/btncancel"
-            android:layout_width="123dp"
-            android:layout_height="wrap_content"
-            android:background="#AF2323"
-            android:text="@string/cancel"
-            android:textSize="20dp"
-            android:textColor="@color/white" />
     </LinearLayout>
 </LinearLayout>

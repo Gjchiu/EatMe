@@ -1,5 +1,6 @@
 package com.example.george.eatme;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,8 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 
+import com.example.george.eatme.Ad.Ad;
+import com.example.george.eatme.Ad.AdGetAllTask;
 import com.example.george.eatme.Member.Member;
 import com.google.gson.Gson;
 import com.viewpagerindicator.CirclePageIndicator;
@@ -28,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
     Timer timer;
     PageIndicator pageIndicator;
     Member member;
+    List<Ad> adlist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadPreferences();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        getadlist();
 //        toolbar.inflateMenu(R.menu.options_menu);
 //        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
 //            @Override
@@ -156,5 +162,22 @@ public class MainActivity extends AppCompatActivity {
         preferencesEditor.clear();
         preferencesEditor.commit();
 
+    }
+    private void getadlist(){
+        if (Common.networkConnected(this)) {
+            String url = Common.URL + "AdServlet";
+            ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
+            try {
+                adlist = new AdGetAllTask().execute(url).get();
+            } catch (Exception e) {
+                Log.e("STOREMAIN", e.toString());
+            }
+            progressDialog.cancel();
+
+        } else {
+            Common.showToast(this, R.string.msg_NoNetwork);
+        }
     }
 }
