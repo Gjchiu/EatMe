@@ -23,7 +23,7 @@
             android:layout_width="305dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="          吃訂我 訂餐"
+            android:text="     吃訂我 訂餐"
             android:textColor="@color/white"
             android:textSize="28sp" />
         <ImageButton
@@ -38,7 +38,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="wrap_content"
-        android:layout_height="256dp"
+        android:layout_height="214dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:scaleType="center"
@@ -47,7 +47,7 @@
     <com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/indicator"
         android:layout_width = "fill_parent"
-        android:layout_height = "wrap_content"
+        android:layout_height = "34dp"
         android:gravity="center"
         android:padding = "10dp"
         android:layout_marginTop="5dp">
@@ -55,7 +55,9 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="276dp">
+        android:layout_height="321dp"
+        android:weightSum="1">
+
 
         <TableRow
             android:layout_width="match_parent"
@@ -63,50 +65,103 @@
             android:layout_marginBottom="20dp"
             android:layout_marginTop="12dp"
             android:gravity="center_horizontal">
-
+        <LinearLayout
+            android:layout_height="130dp"
+            android:layout_width="130dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="#E6CDA0">
             <ImageButton
                 android:id="@+id/btnordermeal"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="10dp"
-                android:background="#E6CDA0"
+                android:layout_height="90dp"
                 android:gravity="center_vertical"
                 android:onClick="covertArea"
+                android:background="#E6CDA0"
                 app:srcCompat="@drawable/fork" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/black"
+                 android:textSize="22dp"
+                 android:text="點餐"
+                 android:layout_marginBottom="10dp"/>
+        </LinearLayout>
 
+            <LinearLayout
+                android:layout_height="130dp"
+                android:layout_width="130dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="#E6CDA0">
             <ImageButton
                 android:id="@+id/btnmember"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#E6CDA0"
-                android:layout_marginRight="10dp"
+                android:layout_height="90dp"
                 android:onClick="coverMember"
+                android:background="#E6CDA0"
                 app:srcCompat="@drawable/member" />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:text="個人資料"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal">
-
-            <ImageButton
-                android:id="@+id/btnorder"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+            <LinearLayout
+                android:layout_height="130dp"
+                android:layout_width="130dp"
+                android:orientation="vertical"
+                android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:background="#E6CDA0"
-                android:onClick="convertToOrder"
-                app:srcCompat="@drawable/order" />
+                android:background="#E6CDA0">
+                <ImageButton
+                    android:id="@+id/btnorder"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:onClick="convertToOrder"
+                    android:background="#E6CDA0"
+                    app:srcCompat="@drawable/order" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:text="訂單查詢"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_height="130dp"
+                android:layout_width="130dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="#E6CDA0">
             <ImageButton
                 android:id="@+id/btntakemeal"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:background="#E6CDA0"
-                android:layout_marginRight="10dp"
                 android:onClick="coverttakeorfer"
                 app:srcCompat="@drawable/take" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:text="取餐"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
 
         </TableRow>
 
@@ -115,9 +170,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#AF2323"
-        android:gravity="center">
-
+        android:gravity="center"
+        android:background="#AF2323">
     </LinearLayout>
+
+
 
 </LinearLayout>

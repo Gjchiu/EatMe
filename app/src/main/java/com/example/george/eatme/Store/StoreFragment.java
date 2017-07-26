@@ -22,6 +22,7 @@ import com.example.george.eatme.Common;
 import com.example.george.eatme.Order.AlertDialogFragment;
 import com.example.george.eatme.R;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
@@ -108,10 +109,13 @@ public class StoreFragment extends Fragment {
             if(store.getStore_image()!=null){
                 holder.imageview.setImageBitmap(Bytes2Bimap(store.getStore_image()));
             }
+            DecimalFormat df=new DecimalFormat("#.#");
+            String s=df.format(store.getStore_star()/store.getStore_count());
+
 
             holder.textview.setText(store.getStore_name()+
                                     "\n地址  " + store.getStore_addr()+
-                                    "\n評價  " + store.getStore_star());
+                                    "\n評價  " + s);
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

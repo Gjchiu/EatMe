@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/body_color"
     android:weightSum="1">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="499dp"
@@ -12,6 +13,16 @@
         android:paddingLeft="15dp"
         android:gravity="center_vertical"
         android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvtotal"
+            android:layout_width="353dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="總金額"
+            android:textColor="@color/black"
+            android:textSize="24dp" />
+
         <LinearLayout
             android:layout_width="338dp"
             android:layout_height="wrap_content"

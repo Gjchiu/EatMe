@@ -75,7 +75,13 @@ public class OrderSettingFragment extends Fragment{
 
         final LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.address);
         final EditText editText = (EditText)view.findViewById(R.id.etadd);
+        TextView tvtotal = (TextView)view.findViewById(R.id.tvtotal);
 
+        for(Orderlist orderlist:orderlists){
+            total = orderlist.getPrice() * orderlist.getOrder_amount() +  total;
+        }
+        order.setTotalprice(total);
+        tvtotal.setText("總金額          " + order.getTotalprice().toString() + "元");
         Spinner spinner = (Spinner)view.findViewById(R.id.spinner);
         if(store.getStore_out().equals("有外送")){
             getway = new String[]{"內用", "自取", "外送"};
@@ -150,14 +156,11 @@ public class OrderSettingFragment extends Fragment{
                     return;
                 }
 
-                for(Orderlist orderlist:orderlists){
-                    total = orderlist.getPrice() * orderlist.getOrder_amount() +  total;
-                }
+
                 Log.d("total", String.valueOf(total));
 
                 order.setReceive_address(editText.getText().toString());
                 order.setOrder_taketime(tvshowtine.getText().toString()+":00");
-                order.setTotalprice(total);
                 Boolean bool = getresult(order);
                 if(bool == true){
                     setalertdialog();

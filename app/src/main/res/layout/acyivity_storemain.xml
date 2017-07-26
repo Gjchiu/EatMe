@@ -23,7 +23,7 @@
             android:layout_width="310dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="          吃訂我 訂餐"
+            android:text="     吃訂我 訂餐"
             android:textColor="@color/white"
             android:textSize="28sp"
             android:layout_weight="1.34" />

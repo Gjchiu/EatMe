@@ -83,8 +83,7 @@ public class OrderlistDialogFragment extends DialogFragment {
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean bool = getresult(order.getOrder_id());
-                if(bool==true){
+                if(getresult(order.getOrder_id()) == true){
                     DialogEvent();
                 }
             }

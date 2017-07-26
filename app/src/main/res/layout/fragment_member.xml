@@ -19,7 +19,7 @@
     <Button
         android:id="@+id/btnupdatepw"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="40dp"
         android:gravity="left"
         android:text="會員密碼"
         android:textSize="28dp"
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="會員電話"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textSize="28sp"/>
     <TextView
         android:id="@+id/tvmemphone"

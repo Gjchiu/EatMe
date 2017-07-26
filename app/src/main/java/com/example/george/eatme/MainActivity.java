@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
     PageIndicator pageIndicator;
     Member member;
     List<Ad> adlist;
+    int page = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadPreferences();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        getadlist();
+//        getadlist();
 //        toolbar.inflateMenu(R.menu.options_menu);
 //        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
 //            @Override
@@ -110,13 +111,12 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if(viewpager.getCurrentItem()==0){
-                        viewpager.setCurrentItem(1);
+                    if(viewpager.getCurrentItem()>=0&&viewpager.getCurrentItem()<(list.size()-1)){
+                        viewpager.setCurrentItem(viewpager.getCurrentItem()+1);
                     }
-                    else if(viewpager.getCurrentItem()==(1)){
-                        viewpager.setCurrentItem(2);
+                    else if(viewpager.getCurrentItem()==(list.size()-1)){
+                        viewpager.setCurrentItem(0);
                     }
-                    else viewpager.setCurrentItem(0);
                 }
             });
         }
@@ -126,9 +126,11 @@ public class MainActivity extends AppCompatActivity {
 
     public List<Integer> getList(){
         list = new ArrayList<Integer>();
-        list.add(R.drawable.p1);
-        list.add(R.drawable.p2);
-        list.add(R.drawable.p3);
+        list.add(R.drawable.banner_01);
+        list.add(R.drawable.banner_02);
+        list.add(R.drawable.banner_03);
+        list.add(R.drawable.banner_04);
+        list.add(R.drawable.banner_05);
         return list;
     }
 

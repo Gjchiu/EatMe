@@ -105,10 +105,10 @@ public class StoreMainActivity extends AppCompatActivity {
             android.support.v4.app.FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
             trans.add(orderlistDialogFragment, "orderlistDialogFragment");
             trans.commitAllowingStateLoss();
-            Boolean bool = getresult(contents);
-            if(bool==true){
-                DialogEvent();
-            }
+//            Boolean bool = getresult(contents);
+//            if(bool==true){
+//                DialogEvent();
+//            }
         }
     }
 

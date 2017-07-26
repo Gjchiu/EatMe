@@ -51,7 +51,7 @@ public class MemberPwFragment extends Fragment {
                     return;
                 }
                 else if (Common.networkConnected(getActivity())) {
-                    String url = Common.URL + "MemberServlet1";
+                    String url = Common.URL + "MemberServlet";
 
                     ProgressDialog progressDialog = new ProgressDialog(getActivity());
                     progressDialog.setMessage("Loading...");

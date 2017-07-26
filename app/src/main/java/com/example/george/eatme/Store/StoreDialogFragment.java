@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.example.george.eatme.Product.ProductActivity;
 import com.example.george.eatme.R;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Java on 2017/7/13.
  */
@@ -59,7 +61,10 @@ public class StoreDialogFragment extends DialogFragment {
         tvstorename.setText(store.getStore_name());
         tvstorephone.setText("電話  "+store.getStore_phone());
         tvstoreout.setText(store.getStore_out());
-        tvstorestar.setText("評價  " + store.getStore_star()/store.getStore_count());
+        DecimalFormat df=new DecimalFormat("#.#");
+        String s=df.format(store.getStore_star()/store.getStore_count());
+
+        tvstorestar.setText("評價  " + s);
         tvstoreadd.setText("地址  " + store.getStore_addr());
         Button btntakeproduct = (Button) view.findViewById(R.id.btntakeproduct);
         btntakeproduct.setOnClickListener(new View.OnClickListener() {

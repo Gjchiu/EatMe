@@ -82,6 +82,15 @@ public class Login2Activity extends AppCompatActivity {
         Member member = gson.fromJson(json, Member.class);
         String json2 = preferences.getString("store", "");
         Store store = gson.fromJson(json2, Store.class);
+        if(member==null&&store==null){
+            SharedPreferences preferences
+                    =getSharedPreferences("Login",MODE_PRIVATE);
+            SharedPreferences.Editor preferencesEditor = preferences.edit();
+            preferencesEditor.clear();
+            preferencesEditor.commit();
+            return;
+
+        }
         if (member != null && member.getAutoLogin() == true){
             LoginMem(member.getMem_mail(), member.getMem_pw());
         }
